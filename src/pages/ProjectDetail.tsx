@@ -43,7 +43,7 @@ export default function ProjectDetail() {
           >
             <div className="sticky top-32 rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white flex items-center justify-center p-2">
                <img 
-                 src={isShivOm ? "public/assets/Artboard 31@4x-8.png" : isCorprest ? "public/assets/Untitled (1)_page-0001.jpg" : isRoundOne ? "public/assets/R11@3x.png" : project.imageUrl} 
+                 src={isShivOm ? "/assets/Artboard 31@4x-8.png" : isCorprest ? "/assets/Untitled (1)_page-0001.jpg" : isRoundOne ? "/assets/R11@3x.png" : project.imageUrl} 
                  alt={isShivOm ? "ShivOm Jewellers" : isCorprest ? "CORPREST CONSULTANCY" : isRoundOne ? "ROUND ONE MMA" : project.title} 
                  className="w-full h-auto max-h-[500px] md:max-h-[600px] lg:max-h-[700px] object-contain"
                  referrerPolicy="no-referrer"
