@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           whileInView={{ y: 0, opacity: 1 }}
           className="text-white text-xl font-bold font-display px-4"
         >
-          {index === 0 ? "ShivOm Jewellers" : index === 1 ? "CORPREST CONSULTANCY" : index === 2 ? "ROUND ONE MMA" : "See Full Design"}
+          About Design
         </motion.h3>
         <motion.div 
           initial={{ scale: 0 }}
@@ -49,17 +49,22 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="group relative aspect-square overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500"
+      className="flex flex-col"
     >
-      {isClickable ? (
-        <Link to={`/project/${project.id}`} className="block w-full h-full">
-          {CardContent}
-        </Link>
-      ) : (
-        <div className="w-full h-full">
-          {CardContent}
-        </div>
-      )}
+      <div className="group relative aspect-square overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500">
+        {isClickable ? (
+          <Link to={`/project/${project.id}`} className="block w-full h-full">
+            {CardContent}
+          </Link>
+        ) : (
+          <div className="w-full h-full">
+            {CardContent}
+          </div>
+        )}
+      </div>
+      <div className="mt-4">
+        <h3 className="text-lg font-bold text-gray-900 mb-1 leading-tight">{project.title}</h3>
+      </div>
     </motion.div>
   );
 }
