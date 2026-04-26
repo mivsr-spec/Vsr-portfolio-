@@ -5,19 +5,19 @@ export const PROJECTS: Project[] = [
     id: '1',
     title: 'ShivOm Jewellers',
     category: 'Branding',
-    imageUrl: 'https://i.ibb.co/Hfg0wXXD/Artboard-31-4x-8.png',
+    imageUrl: 'https://images2.imgbox.com/97/07/GjNE1NkX_o.png',
   },
   {
     id: '2',
     title: 'CORPREST CONSULTANCY',
     category: 'Logo Design',
-    imageUrl: 'https://i.ibb.co/YBHmSymm/Untitled-1-page-0001.jpg',
+    imageUrl: '/corporest.jpg',
   },
   {
     id: '3',
     title: 'ROUND ONE MMA',
     category: 'Social Media',
-    imageUrl: 'https://i.ibb.co/Xn5pbHZ/R11-3x.png',
+    imageUrl: '/R11@3x.png',
   },
   {
     id: '4',
