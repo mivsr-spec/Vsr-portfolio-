@@ -11,13 +11,13 @@ export const PROJECTS: Project[] = [
     id: '2',
     title: 'CORPREST CONSULTANCY',
     category: 'Logo Design',
-    imageUrl: '/corporest.jpg',
+    imageUrl: 'https://images2.imgbox.com/e9/74/YNMqcSI3_o.jpg',
   },
   {
     id: '3',
     title: 'ROUND ONE MMA',
     category: 'Social Media',
-    imageUrl: '/R11@3x.png',
+    imageUrl: 'https://images2.imgbox.com/37/11/bKnjf3RU_o.png',
   },
   {
     id: '4',

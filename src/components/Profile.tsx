@@ -15,7 +15,7 @@ export default function Profile() {
           >
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-8 border-bg-primary shadow-xl">
               <img
-                src="https://i.ibb.co/ymV0n0k5/Whats-App-Image-2026-04-02-at-2-42-33-PM.jpg"
+                src="https://images2.imgbox.com/64/ae/VB34pURF_o.jpeg"
                 alt="Vikram Singh Rawat"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
