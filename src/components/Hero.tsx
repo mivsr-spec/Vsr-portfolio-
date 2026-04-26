@@ -20,11 +20,14 @@ export default function Hero() {
           className="text-white"
         >
           <p className="text-lg md:text-xl font-medium tracking-widest uppercase mb-2 opacity-80">
-            Custom Graphic Design Specialist
+            VIKRAM SINGH RAWAT
           </p>
           <h1 className="text-7xl md:text-9xl font-bold font-display leading-none tracking-tighter mb-4">
-            VIKRAM
+            Visual Marketing Designer
           </h1>
+          <p className="text-xl md:text-2xl font-medium opacity-90 mb-8">
+            Turning your vision into visuals
+          </p>
           <div className="h-1 w-24 bg-orange-500 mb-8"></div>
         </motion.div>
       </div>

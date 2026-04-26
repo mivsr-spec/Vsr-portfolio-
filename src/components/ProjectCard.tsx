@@ -62,8 +62,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         )}
       </div>
-      <div className="mt-4">
-        <h3 className="text-lg font-bold text-gray-900 mb-1 leading-tight">{project.title}</h3>
+      <div className="mt-6 text-center">
+        <h3 className="text-xl font-bold text-gray-900 mb-1 leading-tight">{project.title}</h3>
       </div>
     </motion.div>
   );

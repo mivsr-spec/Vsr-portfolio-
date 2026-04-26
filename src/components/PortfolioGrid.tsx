@@ -18,7 +18,7 @@ export default function PortfolioGrid() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14 md:gap-x-12 md:gap-y-20">
           {PROJECTS.map((project, idx) => (
             <ProjectCard key={project.id} project={project} index={idx} />
           ))}
