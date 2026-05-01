@@ -19,13 +19,11 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-white"
         >
-          <p className="text-lg md:text-xl font-medium tracking-widest uppercase mb-2 opacity-80">
-            VIKRAM SINGH RAWAT
-          </p>
-          <h1 className="text-7xl md:text-9xl font-bold font-display leading-none tracking-tighter mb-4">
-            Visual Marketing Designer
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display leading-[1.1] tracking-tight mb-6 mt-12">
+            Visual<br />
+            Marketing Designer
           </h1>
-          <p className="text-xl md:text-2xl font-medium opacity-90 mb-8">
+          <p className="text-lg md:text-xl font-light opacity-80 mb-8">
             Turning your vision into visuals
           </p>
           <div className="h-1 w-24 bg-orange-500 mb-8"></div>

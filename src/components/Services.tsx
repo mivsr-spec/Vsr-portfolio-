@@ -33,7 +33,7 @@ export default function Services() {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold">My Services</h2>
+          <h2 className="text-4xl font-normal">My Services</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -49,7 +49,7 @@ export default function Services() {
               <div className="w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center mr-6 group-hover:scale-105 transition-transform">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 m-0">{service.title}</h3>
+              <h3 className="text-xl font-normal text-gray-900 m-0">{service.title}</h3>
             </motion.div>
           ))}
         </div>

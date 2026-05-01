@@ -35,7 +35,7 @@ export default function Profile() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Hi, I'm Vikram Singh Rawat</h2>
+              <h2 className="text-3xl md:text-4xl font-normal mb-6">Hi, I'm Vikram Singh Rawat</h2>
               <p className="text-lg text-text-body leading-relaxed mb-8 max-w-2xl">
                 I am a custom graphic designer specialized in Adobe Illustrator and Photoshop, focused on creating clean, professional, and original designs. I help clients turn their ideas into high-quality visuals based on their vision, references, or descriptions. My goal is to deliver designs that are visually strong and suitable for real business use.
               </p>

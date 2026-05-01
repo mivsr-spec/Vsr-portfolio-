@@ -29,13 +29,13 @@ export default function Navbar() {
         isScrolled || location.pathname !== '/' ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className={`text-2xl font-bold font-display tracking-tighter transition-opacity duration-500 ${
-          isScrolled || location.pathname !== '/' ? 'opacity-100 text-text-heading' : 'opacity-0'
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-baseline">
+        <Link to="/" className={`text-2xl font-light font-display tracking-tighter transition-colors duration-500 ${
+          isScrolled || location.pathname !== '/' ? 'text-text-heading' : 'text-white'
         }`}>
-          <span>VIKRAM SINGH RAWAT</span>
+          <span className="leading-none">VIKRAM SINGH RAWAT</span>
         </Link>
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 items-baseline">
           {navLinks.map((link) => (
             <Link
               key={link.name}

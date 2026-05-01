@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold font-display tracking-tighter">VIKRAM SINGH RAWAT</h2>
+            <h2 className="text-3xl font-normal font-display tracking-tighter">VIKRAM SINGH RAWAT</h2>
             <p className="text-text-body max-w-xs leading-relaxed">
               Custom Graphic Design Specialist specialized in Adobe Illustrator and Photoshop. Focused on creating clean, professional, and original designs.
             </p>

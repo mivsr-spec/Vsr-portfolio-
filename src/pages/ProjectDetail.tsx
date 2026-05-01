@@ -44,7 +44,7 @@ export default function ProjectDetail() {
             <div className="sticky top-32 rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white flex items-center justify-center p-2">
                <img 
                  src={isShivOm ? "https://images2.imgbox.com/97/07/GjNE1NkX_o.png" : isCorprest ? "https://images2.imgbox.com/e9/74/YNMqcSI3_o.jpg" : isRoundOne ? "https://images2.imgbox.com/37/11/bKnjf3RU_o.png" : project.imageUrl} 
-                 alt={isShivOm ? "ShivOm Jewellers" : isCorprest ? "CORPREST CONSULTANCY" : isRoundOne ? "ROUND ONE MMA" : project.title} 
+                 alt={isShivOm ? "Shivom Jewellers" : isCorprest ? "Corprest Consultancy" : isRoundOne ? "Round One MMA" : project.title} 
                  className="w-full h-auto max-h-[500px] md:max-h-[600px] lg:max-h-[700px] object-contain"
                  referrerPolicy="no-referrer"
                />
@@ -59,7 +59,7 @@ export default function ProjectDetail() {
             className="w-full md:w-[55%] lg:w-[60%] flex flex-col pt-0 md:pt-2"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 font-serif leading-tight mt-0">
-              {isShivOm ? 'ShivOm Jewellers' : isCorprest ? 'CORPREST CONSULTANCY' : isRoundOne ? 'ROUND ONE MMA' : project.title}
+              {isShivOm ? 'Shivom Jewellers' : isCorprest ? 'Corprest Consultancy' : isRoundOne ? 'Round One MMA' : project.title}
             </h1>
 
             <div className="prose prose-lg text-gray-700 leading-relaxed text-justify max-w-none">

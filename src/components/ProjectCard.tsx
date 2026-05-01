@@ -49,9 +49,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1 }}
-      className="flex flex-col"
+      className="group flex flex-col bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden"
     >
-      <div className="group relative aspect-square overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-2xl transition-all duration-500">
+      <div className="relative aspect-square overflow-hidden bg-white">
         {isClickable ? (
           <Link to={`/project/${project.id}`} className="block w-full h-full">
             {CardContent}
@@ -62,8 +62,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         )}
       </div>
-      <div className="mt-6 text-center">
-        <h3 className="text-xl font-bold text-gray-900 mb-1 leading-tight">{project.title}</h3>
+      <div className="py-6 px-4 bg-white text-center">
+        <h3 className="text-[22px] font-light text-gray-900 capitalize tracking-wide">{project.title}</h3>
       </div>
     </motion.div>
   );

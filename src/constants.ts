@@ -3,19 +3,19 @@ import { Project, Tool } from './types';
 export const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'ShivOm Jewellers',
+    title: 'Shivom Jewellers',
     category: 'Branding',
     imageUrl: 'https://images2.imgbox.com/97/07/GjNE1NkX_o.png',
   },
   {
     id: '2',
-    title: 'CORPREST CONSULTANCY',
+    title: 'Corprest Consultancy',
     category: 'Logo Design',
     imageUrl: 'https://images2.imgbox.com/e9/74/YNMqcSI3_o.jpg',
   },
   {
     id: '3',
-    title: 'ROUND ONE MMA',
+    title: 'Round One MMA',
     category: 'Social Media',
     imageUrl: 'https://images2.imgbox.com/37/11/bKnjf3RU_o.png',
   },
