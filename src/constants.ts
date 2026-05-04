@@ -17,13 +17,13 @@ export const PROJECTS: Project[] = [
     id: '3',
     title: 'Round One MMA',
     category: 'Social Media',
-    imageUrl: 'https://images2.imgbox.com/37/11/bKnjf3RU_o.png',
+    imageUrl: 'https://images2.imgbox.com/c3/32/dcnAYdGR_o.png',
   },
   {
     id: '4',
-    title: 'Corporate Business Card',
+    title: 'My Fitness Gym',
     category: 'Branding',
-    imageUrl: 'https://picsum.photos/seed/business/800/800',
+    imageUrl: 'https://images2.imgbox.com/e5/ca/AgSCdHQ0_o.png',
   },
   {
     id: '5',

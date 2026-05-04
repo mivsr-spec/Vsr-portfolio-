@@ -71,7 +71,7 @@ export default function Profile() {
                 </div>
                 <div className="bg-[#f9f9f9] rounded-2xl p-5 min-w-[150px]">
                   <h3 className="text-xl font-medium font-mark text-black mb-1 tracking-tight">100+</h3>
-                  <p className="text-xs text-gray-500 font-mark font-medium">Project delivered</p>
+                  <p className="text-xs text-gray-500 font-mark font-medium">Projects delivered</p>
                 </div>
               </div>
             </motion.div>
