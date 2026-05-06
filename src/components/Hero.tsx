@@ -20,8 +20,8 @@ export default function Hero() {
           className="text-white"
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display leading-[1.1] tracking-tight mb-6 mt-12">
-            Visual<br />
-            Marketing Designer
+            Marketing<br />
+            Visual Designer
           </h1>
           <p className="text-lg md:text-xl font-light opacity-80 mb-8">
             Turning your vision into visuals

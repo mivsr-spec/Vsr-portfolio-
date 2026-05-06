@@ -76,22 +76,6 @@ const Carousel = () => {
       )
     },
     {
-      id: 'img7',
-      content: (
-        <div className="w-[360px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl bg-[#f8f9fa]">
-          <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/e4/ed/qhcdnvWn_o.png" alt="Design 7" draggable="false" />
-        </div>
-      )
-    },
-    {
-      id: 'img8',
-      content: (
-        <div className="w-[340px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl bg-white">
-          <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/3f/ed/hViIGLOG_o.png" alt="Design 8" draggable="false" />
-        </div>
-      )
-    },
-    {
       id: 'img3',
       content: (
         <div className="w-[400px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl bg-[#f8f9fa]">
@@ -120,6 +104,14 @@ const Carousel = () => {
       content: (
         <div className="w-[320px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl bg-white">
           <img className="w-full h-full object-contain pointer-events-none" src="https://images2.imgbox.com/73/36/3spDB20K_o.png" alt="Design 6" draggable="false" />
+        </div>
+      )
+    },
+    {
+      id: 'img9',
+      content: (
+        <div className="w-[360px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl bg-white">
+          <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/22/98/wGNJmxyo_o.png" alt="Design 9" draggable="false" />
         </div>
       )
     }

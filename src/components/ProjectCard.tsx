@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
 import { Project } from '../types';
 
 interface ProjectCardProps {
@@ -9,9 +8,6 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
-  // If it's the first card (ShivOm Jewellers) or second (Corprest) or third (Round One MMA), wrap it in a Link
-  const isClickable = index === 0 || index === 1 || index === 2;
-
   const CardContent = (
     <>
       <img
@@ -52,15 +48,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       className="group flex flex-col bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden"
     >
       <div className="relative aspect-square overflow-hidden bg-white">
-        {isClickable ? (
-          <Link to={`/project/${project.id}`} className="block w-full h-full">
-            {CardContent}
-          </Link>
-        ) : (
-          <div className="w-full h-full">
-            {CardContent}
-          </div>
-        )}
+        <div className="w-full h-full">
+          {CardContent}
+        </div>
       </div>
       <div className="py-6 px-4 bg-white text-center">
         <h3 className="text-[22px] font-light text-gray-900 capitalize tracking-wide">{project.title}</h3>

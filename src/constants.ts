@@ -20,16 +20,10 @@ export const PROJECTS: Project[] = [
     imageUrl: 'https://images2.imgbox.com/c3/32/dcnAYdGR_o.png',
   },
   {
-    id: '4',
-    title: 'My Fitness Gym',
-    category: 'Branding',
-    imageUrl: 'https://images2.imgbox.com/e5/ca/AgSCdHQ0_o.png',
-  },
-  {
     id: '5',
-    title: 'Event Promotional Poster',
+    title: 'NK Fitness',
     category: 'Advertising',
-    imageUrl: 'https://picsum.photos/seed/poster/800/800',
+    imageUrl: 'https://images2.imgbox.com/b9/27/R8ZApaFw_o.png',
   },
   {
     id: '6',
