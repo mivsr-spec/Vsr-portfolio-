@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     id: '6',
     title: 'Real Estate Flyer',
     category: 'Advertising',
-    imageUrl: 'https://picsum.photos/seed/house/800/800',
+    imageUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=',
   },
 ];
 

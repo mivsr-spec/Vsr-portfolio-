@@ -62,7 +62,7 @@ const Carousel = () => {
     {
       id: 'img1',
       content: (
-        <div className="w-[380px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl">
+        <div className="w-[260px] h-[240px] md:w-[380px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl">
           <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/6f/3a/WEoQSJyB_o.png" alt="Design 1" draggable="false" />
         </div>
       )
@@ -70,7 +70,7 @@ const Carousel = () => {
     {
       id: 'img2',
       content: (
-        <div className="w-[320px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl">
+        <div className="w-[220px] h-[240px] md:w-[320px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl">
           <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/83/a7/vfKbuevs_o.png" alt="Design 2" draggable="false" />
         </div>
       )
@@ -78,7 +78,7 @@ const Carousel = () => {
     {
       id: 'img3',
       content: (
-        <div className="w-[400px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl bg-[#f8f9fa]">
+        <div className="w-[280px] h-[240px] md:w-[400px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl bg-[#f8f9fa]">
           <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/08/de/ezPKeMOb_o.png" alt="Design 3" draggable="false" />
         </div>
       )
@@ -86,7 +86,7 @@ const Carousel = () => {
     {
       id: 'img4',
       content: (
-        <div className="w-[340px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl">
+        <div className="w-[240px] h-[240px] md:w-[340px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl">
           <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/13/b3/DgttINoo_o.png" alt="Design 4" draggable="false" />
         </div>
       )
@@ -94,7 +94,7 @@ const Carousel = () => {
     {
       id: 'img5',
       content: (
-        <div className="w-[380px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl bg-[#f8f9fa]">
+        <div className="w-[260px] h-[240px] md:w-[380px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl bg-[#f8f9fa]">
           <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/c3/ed/hEP8Rsaz_o.png" alt="Design 5" draggable="false" />
         </div>
       )
@@ -102,7 +102,7 @@ const Carousel = () => {
     {
       id: 'img6',
       content: (
-        <div className="w-[320px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl bg-white">
+        <div className="w-[220px] h-[240px] md:w-[320px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl bg-white">
           <img className="w-full h-full object-contain pointer-events-none" src="https://images2.imgbox.com/73/36/3spDB20K_o.png" alt="Design 6" draggable="false" />
         </div>
       )
@@ -110,7 +110,7 @@ const Carousel = () => {
     {
       id: 'img9',
       content: (
-        <div className="w-[360px] h-[360px] shrink-0 overflow-hidden mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-3xl bg-white">
+        <div className="w-[250px] h-[240px] md:w-[360px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl bg-white">
           <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/22/98/wGNJmxyo_o.png" alt="Design 9" draggable="false" />
         </div>
       )
