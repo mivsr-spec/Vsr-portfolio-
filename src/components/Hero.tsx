@@ -17,10 +17,10 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="relative z-10 flex-grow px-8 md:px-12 lg:px-16 flex flex-col pt-0 md:pt-4">
+      <div className="relative z-10 flex-grow w-full max-w-7xl mx-auto px-8 md:px-12 lg:px-16 flex flex-col pt-0 md:pt-4">
         {/* Upper Left: Visual Marketing Designer */}
-        <div className="max-w-fit">
-          <h1 className="text-[128.37px] leading-[109.71px] font-normal text-white tracking-[-0.05em] font-['Arial'] text-left ml-[56px] mt-[-46px] border-0 border-solid rounded-none">
+        <div className="max-w-fit md:mt-[2rem]">
+          <h1 className="text-[clamp(3rem,8vw,8.5rem)] leading-[0.9] font-normal text-white tracking-[-0.05em] font-sans text-left mt-[-1rem] md:mt-[-2rem] border-0 border-solid rounded-none select-none">
             Visual<br />
             marketing<br />
             designer
@@ -28,8 +28,8 @@ export default function Hero() {
         </div>
 
         {/* Tagline */}
-        <div className="absolute bottom-[23vw] md:bottom-[21vw] left-1/2 md:left-[55%] lg:left-[60%] -translate-x-1/2 md:translate-x-0 z-10 w-full max-w-[280px] md:max-w-md mt-auto mb-4 px-4 md:px-0">
-          <p className="text-white text-[27px] leading-[35.5px] font-normal tracking-tight opacity-90 text-right mt-0 pl-0 pt-0 pr-0 pb-0 mb-[-52px] ml-0 mr-[-117px]">
+        <div className="absolute top-[60vh] right-[8%] md:right-[12%] lg:right-[15%] z-10 w-full max-w-[280px] md:max-w-md text-right">
+          <p className="text-white text-[clamp(1rem,1.4vw,1.6rem)] leading-snug font-normal tracking-tight opacity-90">
             trusted by regional brands and agencies,<br />
             “turning their vision into visuals”
           </p>
@@ -38,14 +38,14 @@ export default function Hero() {
 
       {/* Large Name Text Typography Grounded at Bottom */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none select-none z-0">
-        <div className="relative h-[22vw] md:h-[20vw] flex items-end justify-center">
+        <div className="relative h-[25vh] md:h-[22vw] flex items-end justify-center">
           {/* Subtle "RAWAT" background */}
-          <div className="absolute bottom-0 left-[52%] -translate-x-1/2 w-full text-center">
-             <span className="text-[25vw] font-medium text-white/[0.03] tracking-tighter block translate-y-[10%]">RAWAT</span>
+          <div className="absolute bottom-0 left-[53%] -translate-x-1/2 w-full text-center">
+             <span className="text-[clamp(10rem,25vw,30rem)] font-medium text-white/[0.03] tracking-tighter block translate-y-[10%]">RAWAT</span>
           </div>
-          {/* Stark "VIKRAM" foreground - positioned with less translation to stay grounded */}
+          {/* Stark "VIKRAM" foreground */}
           <div className="relative w-full text-center">
-            <h2 className="text-[28vw] md:text-[25vw] font-medium text-white tracking-tighter translate-y-[12%] inline-block">
+            <h2 className="text-[clamp(12rem,28vw,32rem)] font-medium text-white tracking-tighter translate-y-[15%] inline-block">
               VIKRAM
             </h2>
           </div>
