@@ -10,13 +10,13 @@ export default function Footer() {
   }
 
   return (
-    <footer id="contact" className="bg-white pt-24 pb-12 border-t border-gray-100">
+    <footer id="contact" className="bg-black pt-24 pb-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-normal font-display tracking-tighter">VIKRAM SINGH RAWAT</h2>
-            <p className="text-text-body max-w-xs leading-relaxed">
+            <h2 className="text-3xl font-normal font-display tracking-tighter text-white">VIKRAM SINGH RAWAT</h2>
+            <p className="text-white/70 max-w-xs leading-relaxed">
               Custom Graphic Design Specialist specialized in Adobe Illustrator and Photoshop. Focused on creating clean, professional, and original designs.
             </p>
             <div className="flex gap-4">
@@ -28,7 +28,7 @@ export default function Footer() {
                 <a
                   key={idx}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-bg-primary flex items-center justify-center text-text-heading hover:bg-blue-600 hover:text-white transition-all"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all"
                 >
                   {social.icon}
                 </a>
@@ -38,31 +38,31 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="space-y-6">
-            <h3 className="text-sm uppercase tracking-widest font-bold text-text-heading">Get in Touch</h3>
+            <h3 className="text-sm uppercase tracking-widest font-bold text-white">Get in Touch</h3>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-text-body">
-                <Mail className="w-5 h-5 text-blue-600" />
+              <li className="flex items-center gap-3 text-white/70">
+                <Mail className="w-5 h-5 text-white" />
                 <span>vsrx74@gmail.com</span>
               </li>
-              <li className="flex items-center gap-3 text-text-body">
-                <Phone className="w-5 h-5 text-blue-600" />
+              <li className="flex items-center gap-3 text-white/70">
+                <Phone className="w-5 h-5 text-white" />
                 <span>+91 8958123147</span>
               </li>
-              <li className="flex items-center gap-3 text-text-body">
-                <MapPin className="w-5 h-5 text-blue-600" />
+              <li className="flex items-center gap-3 text-white/70">
+                <MapPin className="w-5 h-5 text-white" />
                 <span>New Delhi, India</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-text-body">
+        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-sm text-white/50">
             © {new Date().getFullYear()} Vikram Singh Rawat. All rights reserved.
           </p>
-          <div className="flex gap-8 text-sm text-text-body">
-            <a href="#" className="hover:text-blue-600">Privacy Policy</a>
-            <a href="#" className="hover:text-blue-600">Terms of Service</a>
+          <div className="flex gap-8 text-sm text-white/50">
+            <a href="#" className="hover:text-white">Privacy Policy</a>
+            <a href="#" className="hover:text-white">Terms of Service</a>
           </div>
         </div>
       </div>
