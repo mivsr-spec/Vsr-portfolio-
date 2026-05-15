@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="relative z-10 flex-grow px-8 md:px-12 lg:px-16 flex flex-col pt-0 md:pt-4">
         {/* Upper Left: Visual Marketing Designer */}
         <div className="max-w-fit">
-          <h1 className="text-[125.37px] leading-[108.71px] font-normal text-white tracking-[-0.05em] font-['Arial'] text-left ml-[52px] mt-[-70px] border-0 border-solid rounded-none">
+          <h1 className="text-[125.37px] leading-[108.71px] font-normal text-white tracking-[-0.05em] font-['Arial'] text-left ml-[52px] mt-[-55px] border-0 border-solid rounded-none">
             Visual<br />
             marketing<br />
             designer
