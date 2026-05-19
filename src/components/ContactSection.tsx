@@ -18,40 +18,33 @@ export default function ContactSection() {
 
     // Basic validation
     if (!formData.name || !formData.email) {
+      alert('Please fill in required fields (Name and Email).');
       setStatus('idle');
       return;
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setStatus('error');
-      setTimeout(() => setStatus('idle'), 3000);
-      return;
-    }
-
     try {
-      const response = await fetch('/api/contact', { 
+      const response = await fetch('https://formspree.io/f/xvgzlowq', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New Inquiry from ${formData.name}`,
+          to: 'vsrx74@gmail.com'
+        })
       });
 
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', website: '', pricingModel: 'DESIGN RETAINER', message: '' });
-        // Reset status after a few seconds
-        setTimeout(() => setStatus('idle'), 5000);
       } else {
         setStatus('error');
-        setTimeout(() => setStatus('idle'), 5000);
       }
     } catch (error) {
       console.error('Submission error:', error);
       setStatus('error');
-      setTimeout(() => setStatus('idle'), 5000);
     }
   };
 

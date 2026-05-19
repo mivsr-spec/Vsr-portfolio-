@@ -12,7 +12,7 @@ const column2 = [
   '/src/assets/images/regenerated_image_1779102751904.png',
   '/src/assets/images/regenerated_image_1779102756934.png',
   '/src/assets/images/regenerated_image_1779102755872.png',
-  'https://images2.imgbox.com/33/87/jDgOn8Ed_o.png',
+  '/src/assets/images/regenerated_image_1779112252536.png',
   '/src/assets/images/regenerated_image_1779102753944.png',
   '/src/assets/images/regenerated_image_1779118398176.png',
 ];
