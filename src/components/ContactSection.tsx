@@ -16,7 +16,6 @@ export default function ContactSection() {
     e.preventDefault();
     setStatus('loading');
 
-    // Basic validation
     if (!formData.name || !formData.email) {
       alert('Please fill in required fields (Name and Email).');
       setStatus('idle');
@@ -24,27 +23,29 @@ export default function ContactSection() {
     }
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', { 
+      // Create form data for Web3Forms
+      const web3FormData = new FormData();
+      web3FormData.append('access_key', '57bc1e28-4188-4430-a62b-b58f5caac4cd');
+      web3FormData.append('name', formData.name);
+      web3FormData.append('email', formData.email);
+      web3FormData.append('website', formData.website || '');
+      web3FormData.append('pricingModel', formData.pricingModel);
+      web3FormData.append('message', formData.message);
+      web3FormData.append('subject', `New Inquiry from ${formData.name}`);
+      web3FormData.append('from_name', formData.name);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          access_key: '450fe778-45f7-4611-b116-41eb1319a2d9',
-          name: formData.name,
-          email: formData.email,
-          website: formData.website,
-          pricingModel: formData.pricingModel,
-          message: formData.message,
-          _subject: `New Inquiry from ${formData.name}`,
-          to: 'vsrx74@gmail.com'
-        })
+        body: web3FormData
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (response.ok && data.success) {
         setStatus('success');
         setFormData({ name: '', email: '', website: '', pricingModel: 'DESIGN RETAINER', message: '' });
       } else {
+        console.error('Web3Forms error:', data);
         setStatus('error');
       }
     } catch (error) {
@@ -109,7 +110,7 @@ export default function ContactSection() {
             className="bg-[#111111] rounded-[2.5rem] p-10 md:p-12 text-white border border-white/5 shadow-2xl"
           >
             <form onSubmit={handleSubmit} className="space-y-8">
-              <input type="hidden" name="access_key" value="450fe778-45f7-4611-b116-41eb1319a2d9" />
+              <input type="hidden" name="access_key" value="57bc1e28-4188-4430-a62b-b58f5caac4cd" />
               
               <div className="grid grid-cols-1 gap-8">
                 <div className="space-y-2">
