@@ -1,6 +1,8 @@
+import { motion } from 'motion/react';
+
 export default function Hero() {
   return (
-    <section id="home" className="relative h-screen flex flex-col bg-black overflow-hidden pt-28 md:pt-32">
+    <section id="home" className="sticky top-0 h-screen flex flex-col bg-black overflow-hidden pt-28 md:pt-32 z-0">
       {/* Decorative SVG Lines */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden h-full w-full">
         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" className="w-full h-full opacity-30">
@@ -19,25 +21,40 @@ export default function Hero() {
 
       <div className="relative z-10 flex-grow px-8 md:px-12 lg:px-16 flex flex-col pt-0 md:pt-4">
         {/* Upper Left: Visual Marketing Designer */}
-        <div className="max-w-fit">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          className="max-w-fit"
+        >
           <h1 className="text-[125.37px] leading-[108.71px] font-normal text-white tracking-[-0.05em] font-['Arial'] text-left ml-[52px] mt-[-55px] border-0 border-solid rounded-none">
             Visual<br />
             marketing<br />
             designer
           </h1>
-        </div>
+        </motion.div>
 
         {/* Tagline */}
-        <div className="absolute bottom-[23vw] md:bottom-[21vw] left-1/2 md:left-[55%] lg:left-[60%] -translate-x-1/2 md:translate-x-0 z-10 w-full max-w-[280px] md:max-w-md mt-auto mb-4 px-4 md:px-0">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+          className="absolute bottom-[23vw] md:bottom-[21vw] left-1/2 md:left-[55%] lg:left-[60%] -translate-x-1/2 md:translate-x-0 z-10 w-full max-w-[280px] md:max-w-md mt-auto mb-4 px-4 md:px-0"
+        >
           <p className="text-white text-[27px] leading-[35.5px] font-normal tracking-tight opacity-90 text-right mt-0 pl-0 pt-0 pr-0 pb-0 mb-[-52px] ml-0 mr-[-80px]">
             trusted by regional brands and agencies,<br />
             “turning their vision into visuals”
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Large Name Text Typography Grounded at Bottom */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none select-none z-0">
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
+        className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none select-none z-0"
+      >
         <div className="relative h-[22vw] md:h-[20vw] flex items-end justify-center">
           {/* Subtle "RAWAT" background */}
           <div className="absolute bottom-0 left-[52%] -translate-x-1/2 w-full text-center">
@@ -50,7 +67,7 @@ export default function Hero() {
             </h2>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -62,56 +62,56 @@ const Carousel = () => {
     {
       id: 'img1',
       content: (
-        <div className="w-[260px] h-[240px] md:w-[380px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl">
-          <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/6f/3a/WEoQSJyB_o.png" alt="Design 1" draggable="false" />
+        <div className="w-[200px] h-[180px] md:w-[320px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117625990.png" alt="Design 1" draggable="false" />
         </div>
       )
     },
     {
       id: 'img2',
       content: (
-        <div className="w-[220px] h-[240px] md:w-[320px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl">
-          <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/83/a7/vfKbuevs_o.png" alt="Design 2" draggable="false" />
+        <div className="w-[180px] h-[180px] md:w-[260px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117961700.png" alt="Design 2" draggable="false" />
         </div>
       )
     },
     {
       id: 'img3',
       content: (
-        <div className="w-[280px] h-[240px] md:w-[400px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl bg-[#f8f9fa]">
-          <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/08/de/ezPKeMOb_o.png" alt="Design 3" draggable="false" />
+        <div className="w-[220px] h-[180px] md:w-[340px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117618664.png" alt="Design 3" draggable="false" />
         </div>
       )
     },
     {
       id: 'img4',
       content: (
-        <div className="w-[240px] h-[240px] md:w-[340px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl">
-          <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/13/b3/DgttINoo_o.png" alt="Design 4" draggable="false" />
+        <div className="w-[190px] h-[180px] md:w-[280px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117624747.png" alt="Design 4" draggable="false" />
         </div>
       )
     },
     {
       id: 'img5',
       content: (
-        <div className="w-[260px] h-[240px] md:w-[380px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl bg-[#f8f9fa]">
-          <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/c3/ed/hEP8Rsaz_o.png" alt="Design 5" draggable="false" />
+        <div className="w-[200px] h-[180px] md:w-[320px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117619613.png" alt="Design 5" draggable="false" />
         </div>
       )
     },
     {
       id: 'img6',
       content: (
-        <div className="w-[220px] h-[240px] md:w-[320px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl bg-white">
-          <img className="w-full h-full object-contain pointer-events-none" src="https://images2.imgbox.com/73/36/3spDB20K_o.png" alt="Design 6" draggable="false" />
+        <div className="w-[180px] h-[180px] md:w-[260px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
+          <img className="w-full h-full object-contain pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500 p-8" src="/src/assets/images/regenerated_image_1779117623326.png" alt="Design 6" draggable="false" />
         </div>
       )
     },
     {
       id: 'img9',
       content: (
-        <div className="w-[250px] h-[240px] md:w-[360px] md:h-[360px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-gray-100 rounded-2xl md:rounded-3xl bg-white">
-          <img className="w-full h-full object-cover pointer-events-none" src="https://images2.imgbox.com/22/98/wGNJmxyo_o.png" alt="Design 9" draggable="false" />
+        <div className="w-[190px] h-[180px] md:w-[300px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117617318.png" alt="Design 9" draggable="false" />
         </div>
       )
     }
@@ -281,16 +281,10 @@ const Carousel = () => {
   };
 
   return (
-    <section className="py-20 bg-white overflow-hidden relative">
-      <div className="pb-12 px-6 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-medium font-mark text-[#343434] text-center bg-white">
-          Featured Work
-        </h2>
-      </div>
-
+    <section className="py-12 bg-black overflow-hidden relative">
       {/* Adding fade masks on the edges for a smoother look */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
       <div 
         ref={containerRef}
