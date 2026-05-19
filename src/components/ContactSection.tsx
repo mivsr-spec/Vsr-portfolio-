@@ -194,8 +194,8 @@ export default function ContactSection() {
               {status === 'error' && (
                 <p className="text-red-400 text-center font-bold">Something went wrong. Please try again.</p>
               )}
-            </form>
-          </motion.div>
+            </motion.div>
+         </form>
         </div>
       </div>
     </section>
