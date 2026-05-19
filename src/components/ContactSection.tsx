@@ -24,13 +24,18 @@ export default function ContactSection() {
     }
 
     try {
-      const response = await fetch('https://formspree.io/f/xvgzlowq', { 
+      const response = await fetch('https://api.web3forms.com/submit', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          ...formData,
+          access_key: '450fe778-45f7-4611-b116-41eb1319a2d9',
+          name: formData.name,
+          email: formData.email,
+          website: formData.website,
+          pricingModel: formData.pricingModel,
+          message: formData.message,
           _subject: `New Inquiry from ${formData.name}`,
           to: 'vsrx74@gmail.com'
         })
@@ -104,6 +109,8 @@ export default function ContactSection() {
             className="bg-[#111111] rounded-[2.5rem] p-10 md:p-12 text-white border border-white/5 shadow-2xl"
           >
             <form onSubmit={handleSubmit} className="space-y-8">
+              <input type="hidden" name="access_key" value="450fe778-45f7-4611-b116-41eb1319a2d9" />
+              
               <div className="grid grid-cols-1 gap-8">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400">Your name <span className="text-[#ff4d4d]">*</span></label>
