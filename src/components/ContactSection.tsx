@@ -16,41 +16,42 @@ export default function ContactSection() {
     e.preventDefault();
     setStatus('loading');
 
+    // Basic validation
     if (!formData.name || !formData.email) {
-      alert('Please fill in required fields (Name and Email).');
       setStatus('idle');
       return;
     }
 
-    try {
-      // Create form data for Web3Forms
-      const web3FormData = new FormData();
-      web3FormData.append('access_key', '57bc1e28-4188-4430-a62b-b58f5caac4cd');
-      web3FormData.append('name', formData.name);
-      web3FormData.append('email', formData.email);
-      web3FormData.append('website', formData.website || '');
-      web3FormData.append('pricingModel', formData.pricingModel);
-      web3FormData.append('message', formData.message);
-      web3FormData.append('subject', `New Inquiry from ${formData.name}`);
-      web3FormData.append('from_name', formData.name);
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+      return;
+    }
 
-      const response = await fetch('https://api.web3forms.com/submit', {
+    try {
+      const response = await fetch('/api/contact', { 
         method: 'POST',
-        body: web3FormData
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+      if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', website: '', pricingModel: 'DESIGN RETAINER', message: '' });
+        // Reset status after a few seconds
+        setTimeout(() => setStatus('idle'), 5000);
       } else {
-        console.error('Web3Forms error:', data);
         setStatus('error');
+        setTimeout(() => setStatus('idle'), 5000);
       }
     } catch (error) {
       console.error('Submission error:', error);
       setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
     }
   };
 
@@ -110,8 +111,6 @@ export default function ContactSection() {
             className="bg-[#111111] rounded-[2.5rem] p-10 md:p-12 text-white border border-white/5 shadow-2xl"
           >
             <form onSubmit={handleSubmit} className="space-y-8">
-              <input type="hidden" name="access_key" value="57bc1e28-4188-4430-a62b-b58f5caac4cd" />
-              
               <div className="grid grid-cols-1 gap-8">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400">Your name <span className="text-[#ff4d4d]">*</span></label>
