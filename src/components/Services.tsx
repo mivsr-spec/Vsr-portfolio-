@@ -20,7 +20,7 @@ const services = [
   {
     title: 'Photo Editing & Enhancement',
     subtitle: 'Expert retouching and color grading.',
-    image: '/src/assets/images/regenerated_image_1779163820732.jpg',
+    image: 'https://images2.imgbox.com/e7/f7/jDgOn8Ed_o.jpg',
   },
   {
     title: 'Wedding Album & Frame Design',
