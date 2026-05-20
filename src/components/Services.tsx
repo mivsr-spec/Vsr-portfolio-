@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { ChevronRight } from 'lucide-react';
 
 const services = [
   {
@@ -69,14 +68,9 @@ export default function Services() {
                 <h3 className="text-sm xs:text-base sm:text-2xl font-bold text-black mb-1.5 sm:mb-3 leading-[1.2] sm:leading-tight group-hover:text-[#8a334a] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-500 text-[11px] xs:text-[13px] sm:text-[16px] mb-2 sm:mb-8 leading-snug sm:leading-relaxed max-w-[190px] xs:max-w-xs">
+                <p className="text-gray-500 text-[11px] xs:text-[13px] sm:text-[16px] leading-snug sm:leading-relaxed max-w-[190px] xs:max-w-xs">
                   {service.subtitle}
                 </p>
-                <div className="mt-auto">
-                  <button className="inline-flex items-center gap-1 text-[#8a334a] font-bold text-[12px] xs:text-sm sm:text-[18px] hover:gap-2 transition-all cursor-pointer">
-                    Explore now <ChevronRight className="w-3.5 h-3.5 xs:w-4 xs:h-4 sm:w-5 sm:h-5" />
-                  </button>
-                </div>
               </div>
             </motion.div>
           ))}
