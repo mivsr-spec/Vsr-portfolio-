@@ -49,9 +49,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-36 bg-[#0a0a0a]">
+    <section id="contact" className="py-16 md:py-36 bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           
           {/* Left Side: Info */}
           <div className="flex flex-col h-full lg:min-h-[500px]">
@@ -59,93 +59,93 @@ export default function ContactSection() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-8 md:mb-12"
             >
-              <div className="inline-flex items-center bg-white text-black px-4 py-1.5 rounded-full text-[12px] font-bold tracking-widest mb-8">
+              <div className="inline-flex items-center bg-white text-black px-4 py-1.5 rounded-full text-[12px] font-bold tracking-widest mb-4 md:mb-8">
                 // CONTACT //
               </div>
-              <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 md:mb-6 tracking-tight">
                 Let's Talk.
               </h2>
-              <p className="text-gray-400 text-xl leading-relaxed max-w-md">
+              <p className="text-gray-400 text-base md:text-xl leading-relaxed max-w-md">
                 Got questions or ready to start your design project? Let's bring your ideas to life!
               </p>
             </motion.div>
-
+ 
             {/* Info Card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="ml-[-22px] mt-[-12px] mr-[109px] mb-0 pl-6 pt-6 pb-4 space-y-6"
+              className="ml-0 md:ml-[-22px] mt-2 md:mt-[-12px] mr-0 md:mr-[109px] mb-0 pl-0 md:pl-6 pt-3 md:pt-6 pb-2 md:pb-4 space-y-3 md:space-y-6"
             >
-              <div className="flex justify-between items-center pb-4 border-b border-white/5">
-                <span className="text-white font-bold text-base">Email</span>
-                <a href="mailto:vsrx74@gmail.com" className="text-gray-400 hover:text-white transition-colors text-base ml-0 mt-0 mr-4 pl-0">
+              <div className="flex justify-between items-center pb-3 md:pb-4 border-b border-white/5">
+                <span className="text-white font-bold text-sm md:text-base">Email</span>
+                <a href="mailto:vsrx74@gmail.com" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base ml-0 mt-0 mr-4 pl-0">
                   vsrx74@gmail.com
                 </a>
               </div>
               
-              <div className="flex justify-between items-center pb-4 border-b border-white/5">
-                <span className="text-white font-bold text-base">Telephone</span>
-                <a href="tel:+918958123147" className="text-gray-400 hover:text-white transition-colors text-base mb-0 pl-0 mr-4">
+              <div className="flex justify-between items-center pb-3 md:pb-4 border-b border-white/5">
+                <span className="text-white font-bold text-sm md:text-base">Telephone</span>
+                <a href="tel:+918958123147" className="text-gray-400 hover:text-white transition-colors text-sm md:text-base mb-0 pl-0 mr-4">
                   +91 8958123147
                 </a>
               </div>
             </motion.div>
           </div>
-
+ 
           {/* Right Side: Form */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-[#111111] rounded-[2.5rem] p-10 md:p-12 text-white border border-white/5 shadow-2xl"
+            className="bg-[#111111] rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-12 text-white border border-white/5 shadow-2xl"
           >
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="grid grid-cols-1 gap-8">
+            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-8">
+              <div className="grid grid-cols-1 gap-5 md:gap-8">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400">Your name <span className="text-[#ff4d4d]">*</span></label>
                   <input
                     type="text"
                     required
                     placeholder="Your name"
-                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-[1rem] p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600"
+                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl md:rounded-[1rem] p-4 md:p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600 text-sm md:text-base"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
-
+ 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400">E-mail <span className="text-[#ff4d4d]">*</span></label>
                   <input
                     type="email"
                     required
                     placeholder="Your Email"
-                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-[1rem] p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600"
+                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl md:rounded-[1rem] p-4 md:p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600 text-sm md:text-base"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
-
+ 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400">Website</label>
                   <input
                     type="text"
                     placeholder="Your Website"
-                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-[1rem] p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600"
+                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl md:rounded-[1rem] p-4 md:p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600 text-sm md:text-base"
                     value={formData.website}
                     onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                   />
                 </div>
-
-                <div className="space-y-4">
+ 
+                <div className="space-y-3 md:space-y-4">
                   <label className="text-sm font-bold text-gray-400">Pricing model</label>
-                  <div className="flex bg-[#1a1a1a] p-1 rounded-[1.2rem] border border-white/5">
+                  <div className="flex bg-[#1a1a1a] p-1 rounded-xl md:rounded-[1.2rem] border border-white/5">
                     <button
                       type="button"
-                      className={`flex-1 py-4 px-4 rounded-[1rem] text-[12px] font-bold transition-all ${
+                      className={`flex-1 py-3 px-3 md:py-4 md:px-4 rounded-lg md:rounded-[1rem] text-[12px] font-bold transition-all ${
                         formData.pricingModel === 'DESIGN RETAINER' 
                         ? 'bg-[#2a2a2a] text-white shadow-xl ring-1 ring-white/10' 
                         : 'text-gray-500 hover:text-gray-400'
@@ -156,7 +156,7 @@ export default function ContactSection() {
                     </button>
                     <button
                       type="button"
-                      className={`flex-1 py-4 px-4 rounded-[1rem] text-[12px] font-bold transition-all ${
+                      className={`flex-1 py-3 px-3 md:py-4 md:px-4 rounded-lg md:rounded-[1rem] text-[12px] font-bold transition-all ${
                         formData.pricingModel === 'SINGLE PROJECT' 
                         ? 'bg-[#2a2a2a] text-white shadow-xl ring-1 ring-white/10' 
                         : 'text-gray-500 hover:text-gray-400'
@@ -167,27 +167,27 @@ export default function ContactSection() {
                     </button>
                   </div>
                 </div>
-
+ 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400">Message</label>
                   <textarea
                     rows={4}
                     placeholder="Your Message"
-                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-[1rem] p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600 resize-none"
+                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl md:rounded-[1rem] p-4 md:p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600 resize-none text-sm md:text-base"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
                 </div>
               </div>
-
+ 
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full bg-white text-black font-bold py-6 rounded-[1.5rem] flex items-center justify-center gap-2 hover:bg-gray-200 active:scale-[0.98] transition-all disabled:opacity-50"
+                className="w-full bg-white text-black font-bold py-4 md:py-6 rounded-xl md:rounded-[1.5rem] flex items-center justify-center gap-2 hover:bg-gray-200 active:scale-[0.98] transition-all disabled:opacity-50 text-sm md:text-base"
               >
                 {status === 'loading' ? 'Sending...' : 'Get in touch'}
               </button>
-
+ 
               {status === 'success' && (
                 <p className="text-green-400 text-center font-bold">Thank you! Your message has been sent.</p>
               )}

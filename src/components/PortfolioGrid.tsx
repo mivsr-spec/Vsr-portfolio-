@@ -54,19 +54,66 @@ const ScrollingColumn = ({ images, duration, reverse = false, staggerOffset = "0
   );
 };
 
+const MobileScrollingColumn = ({ images, duration, reverse = false }: { images: string[], duration: number, reverse?: boolean }) => {
+  return (
+    <div className="relative h-[320px] overflow-hidden flex flex-col gap-2">
+      <motion.div
+        animate={{
+          y: reverse ? ['-50%', '0%'] : ['0%', '-50%'],
+        }}
+        transition={{
+          duration: duration,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+        className="flex flex-col gap-2"
+      >
+        {[...images, ...images].map((src, i) => (
+          <div key={i} className="w-full aspect-square rounded-xl overflow-hidden shadow-sm border border-gray-100 flex-shrink-0 bg-gray-50">
+            <img 
+              src={src} 
+              alt={`Work ${i}`} 
+              className="w-full h-full object-cover" 
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
 export default function PortfolioGrid() {
   return (
-    <section id="works" className="py-36 bg-white overflow-hidden">
+    <section id="works" className="py-16 md:py-36 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-black tracking-tight mb-4 text-center">Featured work</h2>
+        
+        {/* Desktop Version (hidden on mobile, matches original completely) */}
+        <div className="hidden md:block">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-black tracking-tight mb-4 text-center">Featured work</h2>
+          </div>
+
+          <div className="grid grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
+            <ScrollingColumn images={column1} duration={25} staggerOffset="0px" />
+            <ScrollingColumn images={column2} duration={20} reverse={true} staggerOffset="-50px" />
+            <ScrollingColumn images={column3} duration={30} staggerOffset="50px" />
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-          <ScrollingColumn images={column1} duration={25} staggerOffset="0px" />
-          <ScrollingColumn images={column2} duration={20} reverse={true} staggerOffset="-50px" />
-          <ScrollingColumn images={column3} duration={30} staggerOffset="50px" />
+        {/* Mobile Version (visible on mobile only, custom 3-column auto-scrolling grid) */}
+        <div className="block md:hidden">
+          <div className="text-center mb-10">
+            <h2 className="text-[32px] font-bold text-black tracking-tight text-center">Featured work</h2>
+          </div>
+
+          <div className="grid grid-cols-3 gap-2.5 items-start max-w-md mx-auto">
+            <MobileScrollingColumn images={column1} duration={14} />
+            <MobileScrollingColumn images={column2} duration={11} reverse={true} />
+            <MobileScrollingColumn images={column3} duration={16} />
+          </div>
         </div>
+
       </div>
     </section>
   );

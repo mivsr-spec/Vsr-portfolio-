@@ -30,9 +30,9 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-36 bg-white overflow-hidden">
+    <section className="py-16 md:py-36 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -46,13 +46,13 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black max-w-3xl mx-auto leading-[1.1]"
+            className="text-[30px] md:text-5xl lg:text-6xl font-bold tracking-tight text-black max-w-3xl mx-auto leading-[1.1]"
           >
             Four steps to your <br /> next big project.
           </motion.h2>
         </div>
 
-        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mt-20">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-12 md:mt-16">
           {steps.map((step, idx) => (
             <motion.div
               key={idx}
@@ -62,12 +62,12 @@ export default function HowItWorks() {
               transition={{ delay: idx * 0.15 }}
               whileHover={{ rotate: 0, scale: 1.02 }}
               style={{ rotate: `${step.rotation}deg` }}
-              className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.08)] flex flex-col h-full min-h-[320px] transition-all duration-300 group"
+              className="bg-white p-5 xs:p-6 sm:p-7 rounded-[1.5rem] sm:rounded-[2rem] border border-gray-100 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.08)] flex flex-col h-full min-h-[220px] xs:min-h-[240px] md:min-h-[270px] transition-all duration-300 group"
             >
-              <div className="text-[14px] font-bold text-gray-400 mb-8 font-mono">{step.number}</div>
-              <h3 className="text-[28px] font-bold text-black mb-4 leading-tight">{step.title}</h3>
+              <div className="text-[12px] sm:text-[14px] font-bold text-gray-400 mb-4 sm:mb-6 font-mono">{step.number}</div>
+              <h3 className="text-[20px] xs:text-[22px] sm:text-[24px] font-bold text-black mb-2 sm:mb-3 leading-tight">{step.title}</h3>
               <div className="mt-auto">
-                <p className="text-[16px] text-gray-500 leading-relaxed font-medium">
+                <p className="text-[14px] sm:text-[15px] text-gray-500 leading-relaxed font-medium">
                   {step.text}
                 </p>
               </div>

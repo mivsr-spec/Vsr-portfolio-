@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 export default function Hero() {
   return (
-    <section id="home" className="sticky top-0 h-screen flex flex-col bg-black overflow-hidden pt-28 md:pt-32 z-0">
+    <section id="home" className="sticky top-0 h-[54vh] md:h-screen flex flex-col bg-black overflow-hidden pt-24 md:pt-32 z-0">
       {/* Decorative SVG Lines */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden h-full w-full">
         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none" className="w-full h-full opacity-30">
@@ -19,7 +19,8 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="relative z-10 flex-grow px-8 md:px-12 lg:px-16 flex flex-col pt-0 md:pt-4">
+      {/* --- DESKTOP VERSION --- */}
+      <div className="hidden md:flex relative z-10 flex-grow px-8 md:px-12 lg:px-16 flex-col pt-0 md:pt-4">
         {/* Upper Left: Visual Marketing Designer */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -44,6 +45,36 @@ export default function Hero() {
           <p className="text-white text-[27px] leading-[35.5px] font-normal tracking-tight opacity-90 text-right mt-0 pl-0 pt-0 pr-0 pb-0 mb-[-52px] ml-0 mr-[-80px]">
             trusted by regional brands and agencies,<br />
             “turning their vision into visuals”
+          </p>
+        </motion.div>
+      </div>
+
+      {/* --- MOBILE VERSION --- */}
+      <div className="flex md:hidden relative z-10 flex-grow px-6 flex-col pt-0 h-full">
+        {/* Upper Left: Visual Marketing Designer */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="max-w-fit mt-[-5px]"
+        >
+          <h1 className="text-[13vw] sm:text-[46px] leading-[11.2vw] sm:leading-[42px] font-normal text-white tracking-[-0.05em] font-['Arial'] text-left">
+            Visual<br />
+            marketing<br />
+            designer
+          </h1>
+        </motion.div>
+
+        {/* Tagline: Precisely positioned on the right, below the curves, above VIKRAM */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="absolute bottom-[23vw] right-6 text-right max-w-[210px] sm:max-w-[240px]"
+        >
+          <p id="tagline-mobile" className="text-white text-[12px] leading-[15px] font-normal tracking-normal opacity-60 ml-0 mt-0 mb-0 mr-[-14px]">
+            global firmmy and brands sex agencis.<br />
+            Tarning lowe time extre meots.
           </p>
         </motion.div>
       </div>

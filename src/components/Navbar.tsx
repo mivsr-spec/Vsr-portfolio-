@@ -24,7 +24,7 @@ export default function Navbar() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="absolute top-0 left-0 right-0 z-50 py-8 px-8 md:px-12 lg:px-16 flex justify-between items-start text-white bg-transparent"
+      className="absolute top-0 left-0 right-0 z-50 py-4 md:py-8 px-6 md:px-12 lg:px-16 flex justify-between items-start text-white bg-transparent"
     >
       <a 
         href="#" 
@@ -32,12 +32,12 @@ export default function Navbar() {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
-        className="text-[20px] font-medium tracking-tight hover:opacity-60 transition-opacity"
+        className="text-[16px] md:text-[20px] font-medium tracking-tight hover:opacity-60 transition-opacity"
       >
         Home
       </a>
       
-      <div className="flex flex-col items-end gap-1 text-[20px] font-medium tracking-tight">
+      <div className="flex flex-col items-end gap-1 md:gap-1 text-[16px] md:text-[20px] font-medium tracking-tight">
         <a 
           href="#works" 
           onClick={(e) => scrollToSection(e, 'works')}
