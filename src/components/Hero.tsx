@@ -73,8 +73,8 @@ export default function Hero() {
           className="absolute bottom-[23vw] right-6 text-right max-w-[210px] sm:max-w-[240px]"
         >
           <p id="tagline-mobile" className="text-white text-[12px] leading-[15px] font-normal tracking-normal opacity-60 ml-0 mt-0 mb-0 mr-[-14px]">
-            global firmmy and brands sex agencis.<br />
-            Tarning lowe time extre meots.
+            trusted by regional brands and agencies,<br />
+            “turning their vision into visuals”
           </p>
         </motion.div>
       </div>
