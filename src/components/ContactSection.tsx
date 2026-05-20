@@ -168,4 +168,46 @@ export default function ContactSection() {
                       type="button"
                       className={`flex-1 py-3 px-3 md:py-4 md:px-4 rounded-lg md:rounded-[1rem] text-[12px] font-bold transition-all ${
                         formData.pricingModel === 'SINGLE PROJECT' 
-                        ? 'bg-[#2a2a2a] text-white shadow
+                        ? 'bg-[#2a2a2a] text-white shadow-xl ring-1 ring-white/10' 
+                        : 'text-gray-500 hover:text-gray-400'
+                      }`}
+                      onClick={() => setFormData({ ...formData, pricingModel: 'SINGLE PROJECT' })}
+                    >
+                      SINGLE PROJECT
+                    </button>
+                  </div>
+                </div>
+ 
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-gray-400">Message</label>
+                  <textarea
+                    rows={4}
+                    placeholder="Your Message"
+                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl md:rounded-[1rem] p-4 md:p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600 resize-none text-sm md:text-base"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  />
+                </div>
+              </div>
+ 
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="w-full bg-white text-black font-bold py-4 md:py-6 rounded-xl md:rounded-[1.5rem] flex items-center justify-center gap-2 hover:bg-gray-200 active:scale-[0.98] transition-all disabled:opacity-50 text-sm md:text-base"
+              >
+                {status === 'loading' ? 'Sending...' : 'Get in touch'}
+              </button>
+ 
+              {status === 'success' && (
+                <p className="text-green-400 text-center font-bold">Thank you! Your message has been sent.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400 text-center font-bold">Something went wrong. Please try again.</p>
+              )}
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
