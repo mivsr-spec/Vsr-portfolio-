@@ -39,8 +39,8 @@ export default function Services() {
     <section className="py-16 md:py-36 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10 md:mb-16">
-          <h1 className="text-[42px] md:text-5xl font-bold text-black tracking-tight mb-4">My Services</h1>
-          <p className="text-gray-500 max-w-2xl mx-auto text-lg">Providing high-quality design solutions tailored to your business needs.</p>
+          <h1 className="text-[37px] md:text-5xl font-bold text-black tracking-tight mb-4">My Services</h1>
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-lg">Providing high-quality design solutions tailored to your business needs.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">

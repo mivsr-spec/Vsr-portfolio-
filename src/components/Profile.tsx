@@ -33,14 +33,14 @@ export default function Profile() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 max-w-lg lg:flex lg:flex-wrap">
-              <div className="bg-[#f9f9f9] rounded-2xl py-4 px-5 md:py-6 md:px-8 min-w-0 lg:min-w-[200px]">
-                <h3 className="text-2xl md:text-3xl font-normal text-black mb-1 font-['Arial']">3+ years</h3>
-                <p className="text-[13px] md:text-[15px] text-gray-500 font-normal font-sans mt-[8px]">Design experience</p>
+            <div className="grid grid-cols-2 gap-3 max-w-lg lg:flex lg:flex-wrap">
+              <div className="bg-[#f9f9f9] rounded-[1rem] md:rounded-2xl py-3 px-3.5 md:py-6 md:px-8 min-w-0 lg:min-w-[200px]">
+                <h3 className="text-lg xs:text-xl md:text-3xl font-normal text-black mb-0.5 md:mb-1 font-['Arial']">3+ years</h3>
+                <p className="text-[11px] xs:text-[12px] md:text-[15px] text-gray-500 font-normal font-sans mt-[4px] md:mt-[8px]">Design experience</p>
               </div>
-              <div className="bg-[#f9f9f9] rounded-2xl py-4 px-5 md:py-6 md:px-8 min-w-0 lg:min-w-[200px]">
-                <h3 className="text-2xl md:text-3xl font-normal text-black mb-1 font-['Arial']">100+</h3>
-                <p className="text-[13px] md:text-[15px] text-gray-500 font-normal font-sans mt-[7px]">Project delivered</p>
+              <div className="bg-[#f9f9f9] rounded-[1rem] md:rounded-2xl py-3 px-3.5 md:py-6 md:px-8 min-w-0 lg:min-w-[200px]">
+                <h3 className="text-lg xs:text-xl md:text-3xl font-normal text-black mb-0.5 md:mb-1 font-['Arial']">100+</h3>
+                <p className="text-[11px] xs:text-[12px] md:text-[15px] text-gray-500 font-normal font-sans mt-[4px] md:mt-[7px]">Project delivered</p>
               </div>
             </div>
           </motion.div>
@@ -53,7 +53,7 @@ export default function Profile() {
             transition={{ duration: 0.6 }}
             className="order-1 lg:order-2 flex justify-center lg:justify-end"
           >
-            <div className="aspect-[4/5] relative rounded-2xl lg:rounded-3xl overflow-hidden bg-gray-100 group w-full max-w-md lg:max-w-sm">
+            <div className="aspect-[4/5] relative rounded-2xl lg:rounded-3xl overflow-hidden bg-gray-100 group w-full max-w-[260px] xs:max-w-[300px] sm:max-w-md lg:max-w-sm">
               <img
                 src={profileImg}
                 alt="Vikram Singh Rawat"
