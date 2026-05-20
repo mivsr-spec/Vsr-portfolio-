@@ -24,22 +24,29 @@ export default function ContactSection() {
     }
 
     try {
-      const response = await fetch('https://formspree.io/f/xvgzlowq', { 
+      // Create form data for Web3Forms
+      const web3FormData = new FormData();
+      web3FormData.append('access_key', '57bc1e28-4188-4430-a62b-b58f5caac4cd');
+      web3FormData.append('name', formData.name);
+      web3FormData.append('email', formData.email);
+      web3FormData.append('website', formData.website || '');
+      web3FormData.append('pricingModel', formData.pricingModel);
+      web3FormData.append('message', formData.message);
+      web3FormData.append('subject', `New Inquiry from ${formData.name}`);
+      web3FormData.append('from_name', formData.name);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ...formData,
-          _subject: `New Inquiry from ${formData.name}`,
-          to: 'vsrx74@gmail.com'
-        })
+        body: web3FormData
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (response.ok && data.success) {
         setStatus('success');
         setFormData({ name: '', email: '', website: '', pricingModel: 'DESIGN RETAINER', message: '' });
       } else {
+        console.error('Web3Forms error:', data);
         setStatus('error');
       }
     } catch (error) {
@@ -104,6 +111,9 @@ export default function ContactSection() {
             className="bg-[#111111] rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-12 text-white border border-white/5 shadow-2xl"
           >
             <form onSubmit={handleSubmit} className="space-y-5 md:space-y-8">
+              {/* Web3Forms API Key */}
+              <input type="hidden" name="access_key" value="57bc1e28-4188-4430-a62b-b58f5caac4cd" />
+              
               <div className="grid grid-cols-1 gap-5 md:gap-8">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400">Your name <span className="text-[#ff4d4d]">*</span></label>
@@ -158,46 +168,4 @@ export default function ContactSection() {
                       type="button"
                       className={`flex-1 py-3 px-3 md:py-4 md:px-4 rounded-lg md:rounded-[1rem] text-[12px] font-bold transition-all ${
                         formData.pricingModel === 'SINGLE PROJECT' 
-                        ? 'bg-[#2a2a2a] text-white shadow-xl ring-1 ring-white/10' 
-                        : 'text-gray-500 hover:text-gray-400'
-                      }`}
-                      onClick={() => setFormData({ ...formData, pricingModel: 'SINGLE PROJECT' })}
-                    >
-                      SINGLE PROJECT
-                    </button>
-                  </div>
-                </div>
- 
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-400">Message</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Your Message"
-                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl md:rounded-[1rem] p-4 md:p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600 resize-none text-sm md:text-base"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  />
-                </div>
-              </div>
- 
-              <button
-                type="submit"
-                disabled={status === 'loading'}
-                className="w-full bg-white text-black font-bold py-4 md:py-6 rounded-xl md:rounded-[1.5rem] flex items-center justify-center gap-2 hover:bg-gray-200 active:scale-[0.98] transition-all disabled:opacity-50 text-sm md:text-base"
-              >
-                {status === 'loading' ? 'Sending...' : 'Get in touch'}
-              </button>
- 
-              {status === 'success' && (
-                <p className="text-green-400 text-center font-bold">Thank you! Your message has been sent.</p>
-              )}
-              {status === 'error' && (
-                <p className="text-red-400 text-center font-bold">Something went wrong. Please try again.</p>
-              )}
-            </form>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
+                        ? 'bg-[#2a2a2a] text-white shadow
