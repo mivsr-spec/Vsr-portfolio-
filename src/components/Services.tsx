@@ -5,17 +5,17 @@ const services = [
   {
     title: 'Illustration & Brand Visual Design',
     subtitle: 'Professional branding and identity solutions.',
-    image: '/src/assets/images/regenerated_image_1779163816142.jpg',
+    image: 'https://images2.imgbox.com/ce/7a/KsYZHJFR_o.png',
   },
   {
     title: 'Social Media & Marketing Design',
     subtitle: 'Engaging content for digital marketing.',
-    image: '/src/assets/images/regenerated_image_1779163817364.jpg',
+    image: 'https://images2.imgbox.com/46/ac/okU1jYHT_o.jpg',
   },
   {
     title: 'Mockup & Product Presentation Design',
     subtitle: 'Stunning visualizations for your products.',
-    image: '/src/assets/images/regenerated_image_1779163818897.jpg',
+    image: 'https://images2.imgbox.com/59/b0/dXezGTGJ_o.png',
   },
   {
     title: 'Photo Editing & Enhancement',
@@ -25,12 +25,12 @@ const services = [
   {
     title: 'Wedding Album & Frame Design',
     subtitle: 'Preserving your special moments beautifully.',
-    image: '/src/assets/images/regenerated_image_1779163822442.jpg',
+    image: 'https://images2.imgbox.com/9f/5a/oYVyP5xy_o.jpg',
   },
   {
     title: 'Print & Promotional Design',
     subtitle: 'High-quality flyers, brochures and more.',
-    image: '/src/assets/images/regenerated_image_1779163824661.png',
+    image: 'https://images2.imgbox.com/21/88/Ox0GKzzz_o.png',
   },
 ];
 

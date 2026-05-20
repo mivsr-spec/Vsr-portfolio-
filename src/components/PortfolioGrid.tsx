@@ -2,26 +2,26 @@ import { motion } from 'motion/react';
 import { ImagePlus } from 'lucide-react';
 
 const column1 = [
-  '/src/assets/images/regenerated_image_1779102111838.png',
-  '/src/assets/images/regenerated_image_1779102115538.png',
-  '/src/assets/images/regenerated_image_1779102119983.png',
-  '/src/assets/images/regenerated_image_1779102091925.png',
+  'https://images2.imgbox.com/a2/1d/ZqUrCRdb_o.png',
+  'https://images2.imgbox.com/0d/ee/xphwdxNs_o.png',
+  'https://images2.imgbox.com/df/7b/tGXSdKvm_o.png',
+  'https://images2.imgbox.com/d6/cb/0ZQyqJWf_o.png',
 ];
 
 const column2 = [
-  '/src/assets/images/regenerated_image_1779102751904.png',
-  '/src/assets/images/regenerated_image_1779102756934.png',
-  '/src/assets/images/regenerated_image_1779102755872.png',
-  '/src/assets/images/regenerated_image_1779112252536.png',
-  '/src/assets/images/regenerated_image_1779102753944.png',
-  '/src/assets/images/regenerated_image_1779118398176.png',
+  'https://images2.imgbox.com/87/44/LLDef0wz_o.png',
+  'https://images2.imgbox.com/3f/a0/DraFxkpK_o.png',
+  'https://images2.imgbox.com/3a/bf/cNH6WLvY_o.png',
+  'https://images2.imgbox.com/65/97/lAMDpU7a_o.png',
+  'https://images2.imgbox.com/f5/5b/0k2T0yIF_o.png',
+  'https://images2.imgbox.com/0d/3d/5czWptyq_o.png',
 ];
 
 const column3 = [
-  '/src/assets/images/regenerated_image_1779116717734.jpg',
-  '/src/assets/images/regenerated_image_1779116715702.jpg',
-  '/src/assets/images/regenerated_image_1779115155893.png',
-  '/src/assets/images/regenerated_image_1779116713948.jpg',
+  'https://images2.imgbox.com/50/0a/FXd5ZgyO_o.png',
+  'https://images2.imgbox.com/46/ac/okU1jYHT_o.jpg',
+  'https://images2.imgbox.com/9f/5a/oYVyP5xy_o.jpg',
+  'https://images2.imgbox.com/81/4a/ptxFROEz_o.jpg',
 ];
 
 const ScrollingColumn = ({ images, duration, reverse = false, staggerOffset = "0px" }: { images: string[], duration: number, reverse?: boolean, staggerOffset?: string }) => {

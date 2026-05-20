@@ -63,7 +63,7 @@ const Carousel = () => {
       id: 'img1',
       content: (
         <div className="w-[200px] h-[180px] md:w-[320px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
-          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117625990.png" alt="Design 1" draggable="false" />
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images2.imgbox.com/65/97/lAMDpU7a_o.png" alt="Design 1" draggable="false" />
         </div>
       )
     },
@@ -71,7 +71,7 @@ const Carousel = () => {
       id: 'img2',
       content: (
         <div className="w-[180px] h-[180px] md:w-[260px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
-          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117961700.png" alt="Design 2" draggable="false" />
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images2.imgbox.com/76/b2/DeIwlj4e_o.png" alt="Design 2" draggable="false" />
         </div>
       )
     },
@@ -79,7 +79,7 @@ const Carousel = () => {
       id: 'img3',
       content: (
         <div className="w-[220px] h-[180px] md:w-[340px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
-          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117618664.png" alt="Design 3" draggable="false" />
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images2.imgbox.com/89/e8/DxkYW6FC_o.png" alt="Design 3" draggable="false" />
         </div>
       )
     },
@@ -87,7 +87,7 @@ const Carousel = () => {
       id: 'img4',
       content: (
         <div className="w-[190px] h-[180px] md:w-[280px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
-          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117624747.png" alt="Design 4" draggable="false" />
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images2.imgbox.com/fd/0c/2DTfYVvk_o.png" alt="Design 4" draggable="false" />
         </div>
       )
     },
@@ -95,7 +95,7 @@ const Carousel = () => {
       id: 'img5',
       content: (
         <div className="w-[200px] h-[180px] md:w-[320px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
-          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117619613.png" alt="Design 5" draggable="false" />
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images2.imgbox.com/3f/a0/DraFxkpK_o.png" alt="Design 5" draggable="false" />
         </div>
       )
     },
@@ -103,7 +103,7 @@ const Carousel = () => {
       id: 'img6',
       content: (
         <div className="w-[180px] h-[180px] md:w-[260px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
-          <img className="w-full h-full object-contain pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500 p-8" src="/src/assets/images/regenerated_image_1779117623326.png" alt="Design 6" draggable="false" />
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images2.imgbox.com/0d/3d/5czWptyq_o.png" alt="Design 6" draggable="false" />
         </div>
       )
     },
@@ -111,7 +111,7 @@ const Carousel = () => {
       id: 'img9',
       content: (
         <div className="w-[190px] h-[180px] md:w-[300px] md:h-[280px] shrink-0 overflow-hidden mx-2 md:mx-4 relative shadow-[0_10px_30px_rgba(0,0,0,0.3)] border border-white/5 rounded-2xl md:rounded-3xl bg-white group">
-          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="/src/assets/images/regenerated_image_1779117617318.png" alt="Design 9" draggable="false" />
+          <img className="w-full h-full object-cover pointer-events-none grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images2.imgbox.com/f5/5b/0k2T0yIF_o.png" alt="Design 9" draggable="false" />
         </div>
       )
     }
