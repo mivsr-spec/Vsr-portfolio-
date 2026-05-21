@@ -46,7 +46,7 @@ export default function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[26px] md:text-5xl lg:text-6xl font-bold tracking-tight text-black max-w-3xl mx-auto leading-[1.1]"
+            className="text-[29px] md:text-5xl lg:text-6xl font-bold tracking-tight text-black max-w-3xl mx-auto leading-[1.1]"
           >
             Four steps to your <br /> next big project.
           </motion.h2>

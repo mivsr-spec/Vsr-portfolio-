@@ -21,9 +21,9 @@ export default function Navbar() {
 
   return (
     <motion.nav 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      initial={{ opacity: 0, filter: 'blur(8px)' }}
+      animate={{ opacity: 1, filter: 'blur(0px)' }}
+      transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
       className="absolute top-0 left-0 right-0 z-50 py-4 md:py-8 px-6 md:px-12 lg:px-16 flex justify-between items-start text-white bg-transparent"
     >
       <a 
@@ -51,6 +51,13 @@ export default function Navbar() {
           className="hover:opacity-60 transition-opacity"
         >
           About
+        </a>
+        <a 
+          href="#services" 
+          onClick={(e) => scrollToSection(e, 'services')}
+          className="hover:opacity-60 transition-opacity"
+        >
+          Services
         </a>
         <a 
           href="#contact" 

@@ -23,9 +23,9 @@ export default function Hero() {
       <div className="hidden md:flex relative z-10 flex-grow px-8 md:px-12 lg:px-16 flex-col pt-0 md:pt-4">
         {/* Upper Left: Visual Marketing Designer */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          initial={{ opacity: 0, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
           className="max-w-fit"
         >
           <h1 className="text-[125.37px] leading-[108.71px] font-normal text-white tracking-[-0.05em] font-['Arial'] text-left ml-[52px] mt-[-55px] border-0 border-solid rounded-none">
@@ -37,9 +37,9 @@ export default function Hero() {
 
         {/* Tagline */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+          initial={{ opacity: 0, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
           className="absolute bottom-[23vw] md:bottom-[21vw] left-1/2 md:left-[55%] lg:left-[60%] -translate-x-1/2 md:translate-x-0 z-10 w-full max-w-[280px] md:max-w-md mt-auto mb-4 px-4 md:px-0"
         >
           <p className="text-white text-[27px] leading-[35.5px] font-normal tracking-tight opacity-90 text-right mt-0 pl-0 pt-0 pr-0 pb-0 mb-[-52px] ml-0 mr-[-80px]">
@@ -53,9 +53,9 @@ export default function Hero() {
       <div className="flex md:hidden relative z-10 flex-grow px-6 flex-col pt-0 h-full">
         {/* Upper Left: Visual Marketing Designer */}
         <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          initial={{ opacity: 0, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
           className="max-w-fit mt-[-5px]"
         >
           <h1 className="text-[13vw] sm:text-[46px] leading-[11.2vw] sm:leading-[42px] font-normal text-white tracking-[-0.05em] font-['Arial'] text-left">
@@ -67,9 +67,9 @@ export default function Hero() {
 
         {/* Tagline: Precisely positioned on the right, below the curves, above VIKRAM */}
         <motion.div 
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          initial={{ opacity: 0, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, filter: 'blur(0px)' }}
+          transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
           className="absolute bottom-[23vw] right-6 text-right max-w-[210px] sm:max-w-[240px]"
         >
           <p id="tagline-mobile" className="text-white text-[12px] leading-[15px] font-normal tracking-normal opacity-60 ml-0 mt-0 mb-0 mr-[-14px]">
@@ -81,9 +81,9 @@ export default function Hero() {
 
       {/* Large Name Text Typography Grounded at Bottom */}
       <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
+        initial={{ opacity: 0, filter: 'blur(8px)' }}
+        animate={{ opacity: 1, filter: 'blur(0px)' }}
+        transition={{ duration: 1.2, delay: 0, ease: "easeOut" }}
         className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none select-none z-0"
       >
         <div className="relative h-[22vw] md:h-[20vw] flex items-end justify-center">

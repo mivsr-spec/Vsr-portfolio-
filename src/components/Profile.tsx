@@ -3,7 +3,7 @@ import profileImg from '../assets/images/regenerated_image_1778855762789.jpeg';
 
 export default function Profile() {
   return (
-    <section id="about" className="py-16 md:py-36 bg-white overflow-hidden">
+    <section id="about" className="py-16 md:py-36 bg-[#fbfbfb] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-24 items-center">
           {/* Left Column: Content */}
@@ -33,14 +33,39 @@ export default function Profile() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-3 max-w-lg lg:flex lg:flex-wrap">
-              <div className="bg-[#f9f9f9] rounded-[1rem] md:rounded-2xl py-3 px-3.5 md:py-6 md:px-8 min-w-0 lg:min-w-[200px]">
-                <h3 className="text-lg xs:text-xl md:text-3xl font-normal text-black mb-0.5 md:mb-1 font-['Arial']">3+ years</h3>
-                <p className="text-[11px] xs:text-[12px] md:text-[15px] text-gray-500 font-normal font-sans mt-[4px] md:mt-[8px]">Design experience</p>
+            <div className="grid grid-cols-2 gap-4 max-w-xl w-full">
+              {/* Card 1 */}
+              <div className="bg-white rounded-[24px] md:rounded-[32px] p-5 md:p-8 flex flex-col justify-between h-[150px] sm:h-[180px] md:h-[220px] border border-neutral-100/80 shadow-[0_8px_30px_rgba(0,0,0,0.012)] relative">
+                <div className="flex justify-between items-start">
+                  <span className="text-3xl sm:text-4xl md:text-[56px] font-medium text-black tracking-tighter leading-none font-sans">
+                    50+
+                  </span>
+                  <span className="text-[10px] md:text-xs font-mono font-medium text-neutral-400 mt-1">
+                    01
+                  </span>
+                </div>
+                <div className="text-right self-end mt-auto">
+                  <p className="text-[11px] sm:text-[14px] md:text-[17px] text-black font-semibold leading-[1.3] tracking-tight font-sans">
+                    Successful projects<br />completed
+                  </p>
+                </div>
               </div>
-              <div className="bg-[#f9f9f9] rounded-[1rem] md:rounded-2xl py-3 px-3.5 md:py-6 md:px-8 min-w-0 lg:min-w-[200px]">
-                <h3 className="text-lg xs:text-xl md:text-3xl font-normal text-black mb-0.5 md:mb-1 font-['Arial']">100+</h3>
-                <p className="text-[11px] xs:text-[12px] md:text-[15px] text-gray-500 font-normal font-sans mt-[4px] md:mt-[7px]">Project delivered</p>
+
+              {/* Card 2 */}
+              <div className="bg-white rounded-[24px] md:rounded-[32px] p-5 md:p-8 flex flex-col justify-between h-[150px] sm:h-[180px] md:h-[220px] border border-neutral-100/80 shadow-[0_8px_30px_rgba(0,0,0,0.012)] relative">
+                <div className="flex justify-between items-start">
+                  <span className="text-3xl sm:text-4xl md:text-[56px] font-medium text-black tracking-tighter leading-none font-sans">
+                    95%
+                  </span>
+                  <span className="text-[10px] md:text-xs font-mono font-medium text-neutral-400 mt-1">
+                    02
+                  </span>
+                </div>
+                <div className="text-right self-end mt-auto">
+                  <p className="text-[11px] sm:text-[14px] md:text-[17px] text-black font-semibold leading-[1.3] tracking-tight font-sans">
+                    Customer<br />satisfaction rate
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>

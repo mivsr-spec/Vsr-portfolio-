@@ -29,13 +29,23 @@ const services = [
   {
     title: 'Print & Promotional Design',
     subtitle: 'High-quality flyers, brochures and more.',
-    image: 'https://images2.imgbox.com/21/88/Ox0GKzzz_o.png',
+    image: 'https://images2.imgbox.com/bf/77/1ZyNGzBr_o.png',
+  },
+  {
+    title: 'Web Design',
+    subtitle: 'Stunning visuals, smart structure and strategy.',
+    image: 'https://images2.imgbox.com/47/f0/8HFyzDNS_o.png',
+  },
+  {
+    title: 'Content Writing',
+    subtitle: 'Blog posts, product descriptions, emails and more.',
+    image: 'https://images2.imgbox.com/8b/64/r1jkPyXq_o.png',
   },
 ];
 
 export default function Services() {
   return (
-    <section className="py-16 md:py-36 bg-white">
+    <section id="services" className="py-16 md:py-36 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-10 md:mb-16">
           <h1 className="text-[37px] md:text-5xl font-bold text-black tracking-tight mb-4">My Services</h1>

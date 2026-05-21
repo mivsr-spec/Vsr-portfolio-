@@ -5,6 +5,7 @@ import Services from '../components/Services';
 import PortfolioGrid from '../components/PortfolioGrid';
 import ContactSection from '../components/ContactSection';
 import HowItWorks from '../components/HowItWorks';
+import LatestProjects from '../components/LatestProjects';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <PortfolioGrid />
         <Services />
         <HowItWorks />
+        <LatestProjects />
         <ContactSection />
         <Carousel />
       </div>

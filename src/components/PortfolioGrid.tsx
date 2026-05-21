@@ -1,5 +1,5 @@
+import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { ImagePlus } from 'lucide-react';
 
 const column1 = [
   'https://images2.imgbox.com/a2/1d/ZqUrCRdb_o.png',
@@ -24,97 +24,337 @@ const column3 = [
   'https://images2.imgbox.com/81/4a/ptxFROEz_o.jpg',
 ];
 
-const ScrollingColumn = ({ images, duration, reverse = false, staggerOffset = "0px" }: { images: string[], duration: number, reverse?: boolean, staggerOffset?: string }) => {
-  return (
-    <div className="relative h-[600px] overflow-hidden flex flex-col gap-4">
-      <motion.div
-        animate={{
-          y: reverse ? ['-50%', '0%'] : ['0%', '-50%'],
-        }}
-        transition={{
-          duration: duration,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        style={{ y: staggerOffset }}
-        className="flex flex-col gap-4"
-      >
-        {[...images, ...images].map((src, i) => (
-          <div key={i} className="w-full aspect-square rounded-xl overflow-hidden shadow-lg border border-gray-100 flex-shrink-0 bg-gray-50">
-            <img 
-              src={src} 
-              alt={`Work ${i}`} 
-              className="w-full h-full object-cover transition-all duration-500" 
-              referrerPolicy="no-referrer"
-            />
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  );
-};
+interface ColumnItem {
+  src: string;
+  id: string;
+}
 
-const MobileScrollingColumn = ({ images, duration, reverse = false }: { images: string[], duration: number, reverse?: boolean }) => {
+const col1Items: ColumnItem[] = column1.map((src, i) => ({ src, id: `col1-${i}` }));
+const col2Items: ColumnItem[] = column2.map((src, i) => ({ src, id: `col2-${i}` }));
+const col3Items: ColumnItem[] = column3.map((src, i) => ({ src, id: `col3-${i}` }));
+
+const doubledCol1: ColumnItem[] = [...col1Items, ...col1Items.map((item, i) => ({ ...item, id: `${item.id}-dup` }))];
+const doubledCol2: ColumnItem[] = [...col2Items, ...col2Items.map((item, i) => ({ ...item, id: `${item.id}-dup` }))];
+const doubledCol3: ColumnItem[] = [...col3Items, ...col3Items.map((item, i) => ({ ...item, id: `${item.id}-dup` }))];
+
+const Column = ({ 
+  items, 
+  columnRef, 
+  onPressItem,
+  heldId,
+  isPopped
+}: { 
+  items: ColumnItem[]; 
+  columnRef: React.RefObject<HTMLDivElement | null>; 
+  onPressItem: (e: React.PointerEvent, src: string, id: string) => void;
+  heldId?: string;
+  isPopped?: boolean;
+}) => {
   return (
-    <div className="relative h-[320px] overflow-hidden flex flex-col gap-2">
-      <motion.div
-        animate={{
-          y: reverse ? ['-50%', '0%'] : ['0%', '-50%'],
-        }}
-        transition={{
-          duration: duration,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="flex flex-col gap-2"
-      >
-        {[...images, ...images].map((src, i) => (
-          <div key={i} className="w-full aspect-square rounded-xl overflow-hidden shadow-sm border border-gray-100 flex-shrink-0 bg-gray-50">
-            <img 
-              src={src} 
-              alt={`Work ${i}`} 
-              className="w-full h-full object-cover" 
-              referrerPolicy="no-referrer"
-            />
-          </div>
-        ))}
-      </motion.div>
+    <div 
+      ref={columnRef}
+      className="relative h-[280px] sm:h-[450px] md:h-[600px] overflow-hidden flex flex-col gap-2 md:gap-4 select-none"
+      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+    >
+      <div className="flex flex-col gap-2 md:gap-4">
+        {items.map(({ src, id }) => {
+          const isThisHeld = heldId === id && isPopped;
+          return (
+            <div 
+              key={id} 
+              data-img-id={id}
+              onPointerDown={(e) => onPressItem(e, src, id)}
+              className={`w-full aspect-square rounded-xl overflow-hidden shadow-md border border-gray-100 flex-shrink-0 bg-gray-50 cursor-grab active:cursor-grabbing transition-opacity duration-300 ${
+                isThisHeld ? 'opacity-0' : 'opacity-100'
+              }`}
+              style={{ touchAction: 'none' }}
+            >
+              <img 
+                src={src} 
+                alt="Featured work" 
+                className="w-full h-full object-cover select-none pointer-events-none" 
+                referrerPolicy="no-referrer"
+                draggable="false"
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
 export default function PortfolioGrid() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  const col1Ref = useRef<HTMLDivElement>(null);
+  const col2Ref = useRef<HTMLDivElement>(null);
+  const col3Ref = useRef<HTMLDivElement>(null);
+
+  const columns = [
+    { ref: col1Ref, speed: 0.04 },
+    { ref: col2Ref, speed: 0.05, reverse: true },
+    { ref: col3Ref, speed: 0.03 }
+  ];
+
+  const [heldImage, setHeldImage] = useState<{
+    src: string;
+    id: string;
+    rect: DOMRect;
+    isClosing: boolean;
+    isPopped: boolean;
+  } | null>(null);
+
+  const heldImageRef = useRef(heldImage);
+  heldImageRef.current = heldImage;
+
+  const isHeldRef = useRef(false);
+  const currentYRef = useRef(0);
+  const holdTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Initialize stagger positions
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (col1Ref.current) col1Ref.current.scrollTop = 20;
+      if (col2Ref.current) col2Ref.current.scrollTop = 120;
+      if (col3Ref.current) col3Ref.current.scrollTop = 60;
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // requestAnimationFrame continuous ticking loop
+  useEffect(() => {
+    let animationId: number;
+    let lastTime = performance.now();
+
+    const tick = (now: number) => {
+      const delta = Math.min(now - lastTime, 50); // Cap frame delta to prevent jumps on background tab wakes
+      lastTime = now;
+
+      if (!isHeldRef.current) {
+        columns.forEach(({ ref, speed, reverse }) => {
+          const el = ref.current;
+          if (!el) return;
+
+          const direction = reverse ? -1 : 1;
+          el.scrollTop += direction * speed * delta;
+
+          const half = el.scrollHeight / 2;
+          if (el.scrollTop >= half) {
+            el.scrollTop -= half;
+          } else if (el.scrollTop <= 0) {
+            el.scrollTop += half;
+          }
+        });
+      }
+
+      animationId = requestAnimationFrame(tick);
+    };
+
+    animationId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
+  const handleDrag = (deltaY: number) => {
+    columns.forEach(({ ref, reverse }) => {
+      const el = ref.current;
+      if (!el) return;
+
+      const direction = reverse ? -1 : 1;
+      // Multiplier governs scroll sensitivity of dragging relative to pixel movement
+      el.scrollTop += deltaY * direction * 0.45;
+
+      const half = el.scrollHeight / 2;
+      if (el.scrollTop >= half) {
+        el.scrollTop -= half;
+      } else if (el.scrollTop <= 0) {
+        el.scrollTop += half;
+      }
+    });
+  };
+
+  const handleImagePress = (e: React.PointerEvent, src: string, id: string) => {
+    e.preventDefault();
+    currentYRef.current = e.clientY;
+
+    const currentTarget = e.currentTarget as HTMLElement;
+    const rect = currentTarget.getBoundingClientRect();
+
+    isHeldRef.current = true;
+    setHeldImage({
+      src,
+      id,
+      rect,
+      isClosing: false,
+      isPopped: false
+    });
+
+    if (holdTimerRef.current) clearTimeout(holdTimerRef.current);
+
+    holdTimerRef.current = setTimeout(() => {
+      setHeldImage(prev => {
+        if (prev && prev.id === id && !prev.isClosing) {
+          return { ...prev, isPopped: true };
+        }
+        return prev;
+      });
+    }, 1000);
+  };
+
+  const handleRelease = () => {
+    if (holdTimerRef.current) {
+      clearTimeout(holdTimerRef.current);
+      holdTimerRef.current = null;
+    }
+
+    isHeldRef.current = false;
+
+    const currentHeld = heldImageRef.current;
+    if (!currentHeld) return;
+
+    if (!currentHeld.isPopped) {
+      // Released before 1-second timeout, just cancel the popup
+      setHeldImage(null);
+      return;
+    }
+
+    if (currentHeld.isClosing) return;
+
+    // Grab exactly where the thumbnail is positioned in the scroll column right now
+    const element = document.querySelector(`[data-img-id="${currentHeld.id}"]`);
+    const finalRect = element ? element.getBoundingClientRect() : currentHeld.rect;
+
+    setHeldImage({
+      ...currentHeld,
+      rect: finalRect,
+      isClosing: true
+    });
+  };
+
+  // Drag and Release listener inside useEffect for window context responsiveness
+  useEffect(() => {
+    if (!heldImage || heldImage.isClosing) return;
+
+    const handlePointerMove = (e: PointerEvent) => {
+      const clientY = e.clientY;
+      const deltaY = clientY - currentYRef.current;
+      currentYRef.current = clientY;
+      handleDrag(deltaY);
+    };
+
+    const handlePointerUp = () => {
+      handleRelease();
+    };
+
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('pointerup', handlePointerUp);
+    window.addEventListener('pointercancel', handlePointerUp);
+
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('pointerup', handlePointerUp);
+      window.removeEventListener('pointercancel', handlePointerUp);
+    };
+  }, [heldImage]);
+
+  const getRelativeRect = (domRect: DOMRect | null) => {
+    if (!domRect || !sectionRef.current) return { top: 0, left: 0, width: 0, height: 0 };
+    const parentRect = sectionRef.current.getBoundingClientRect();
+    return {
+      top: domRect.top - parentRect.top,
+      left: domRect.left - parentRect.left,
+      width: domRect.width,
+      height: domRect.height,
+    };
+  };
+
+  const getCenteringRect = () => {
+    if (!sectionRef.current) return { top: 0, left: 0, width: 0, height: 0 };
+    const parentRect = sectionRef.current.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+
+    // Optimal modal size: ~75% of viewport width, maximum of 600px wide. Centered nicely.
+    const size = Math.min(viewportWidth * 0.75, 600);
+
+    const viewportCenterX = viewportWidth / 2;
+    const viewportCenterY = viewportHeight / 2;
+
+    const targetLeft = viewportCenterX - size / 2 - parentRect.left;
+    const targetTop = viewportCenterY - size / 2 - parentRect.top;
+
+    return {
+      top: targetTop,
+      left: targetLeft,
+      width: size,
+      height: size,
+    };
+  };
+
   return (
-    <section id="works" className="py-16 md:py-36 bg-white overflow-hidden">
+    <section id="works" className="py-16 md:py-36 bg-white overflow-hidden relative" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Desktop Version (hidden on mobile, matches original completely) */}
-        <div className="hidden md:block">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-black tracking-tight mb-4 text-center">Featured work</h2>
-          </div>
-
-          <div className="grid grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
-            <ScrollingColumn images={column1} duration={25} staggerOffset="0px" />
-            <ScrollingColumn images={column2} duration={20} reverse={true} staggerOffset="-50px" />
-            <ScrollingColumn images={column3} duration={30} staggerOffset="50px" />
-          </div>
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-[32px] md:text-5xl font-bold text-black tracking-tight mb-4 text-center select-none">
+            Featured work
+          </h2>
         </div>
 
-        {/* Mobile Version (visible on mobile only, custom 3-column auto-scrolling grid) */}
-        <div className="block md:hidden">
-          <div className="text-center mb-10">
-            <h2 className="text-[32px] font-bold text-black tracking-tight text-center">Featured work</h2>
-          </div>
-
-          <div className="grid grid-cols-3 gap-2.5 items-start max-w-md mx-auto">
-            <MobileScrollingColumn images={column1} duration={14} />
-            <MobileScrollingColumn images={column2} duration={11} reverse={true} />
-            <MobileScrollingColumn images={column3} duration={16} />
-          </div>
+        {/* Unified Responsive 3-Column Grid */}
+        <div className="grid grid-cols-3 gap-2.5 md:gap-8 items-start max-w-md md:max-w-5xl mx-auto">
+          <Column items={doubledCol1} columnRef={col1Ref} onPressItem={handleImagePress} heldId={heldImage?.id} isPopped={heldImage?.isPopped} />
+          <Column items={doubledCol2} columnRef={col2Ref} onPressItem={handleImagePress} heldId={heldImage?.id} isPopped={heldImage?.isPopped} />
+          <Column items={doubledCol3} columnRef={col3Ref} onPressItem={handleImagePress} heldId={heldImage?.id} isPopped={heldImage?.isPopped} />
         </div>
 
       </div>
+
+      {/* Dimmed backdrop background overlay */}
+      {heldImage && (heldImage.isPopped || heldImage.isClosing) && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: heldImage.isClosing ? 0 : 0.35 }}
+          className="absolute inset-0 bg-black z-40 pointer-events-none"
+          transition={{ duration: 0.3 }}
+        />
+      )}
+
+      {/* Floating Expanded Clone */}
+      {heldImage && (heldImage.isPopped || heldImage.isClosing) && (
+        <motion.div
+          key={heldImage.id}
+          initial={getRelativeRect(heldImage.rect)}
+          animate={
+            heldImage.isClosing
+              ? {
+                  ...getRelativeRect(heldImage.rect),
+                  borderRadius: "12px",
+                }
+              : getCenteringRect()
+          }
+          transition={{
+            type: 'spring',
+            stiffness: 280,
+            damping: 28,
+          }}
+          onAnimationComplete={() => {
+            if (heldImage.isClosing) {
+              setHeldImage(null);
+            }
+          }}
+          className="absolute z-50 overflow-hidden bg-white shadow-2xl rounded-2xl cursor-grabbing select-none"
+          style={{ touchAction: 'none' }}
+        >
+          <img
+            src={heldImage.src}
+            alt="Expanded featured work"
+            className="w-full h-full object-cover select-none pointer-events-none"
+            referrerPolicy="no-referrer"
+            draggable="false"
+          />
+        </motion.div>
+      )}
     </section>
   );
 }
