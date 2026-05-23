@@ -16,6 +16,7 @@ export default function ContactSection() {
     e.preventDefault();
     setStatus('loading');
 
+    // Basic validation
     if (!formData.name || !formData.email) {
       alert('Please fill in required fields (Name and Email).');
       setStatus('idle');
@@ -23,28 +24,22 @@ export default function ContactSection() {
     }
 
     try {
-      const web3FormData = new FormData();
-      web3FormData.append('access_key', '57bc1e28-4188-4430-a62b-b58f5caac4cd');
-      web3FormData.append('name', formData.name);
-      web3FormData.append('email', formData.email);
-      web3FormData.append('website', formData.website || '');
-      web3FormData.append('pricingModel', formData.pricingModel);
-      web3FormData.append('message', formData.message);
-      web3FormData.append('subject', `New Inquiry from ${formData.name}`);
-      web3FormData.append('from_name', formData.name);
-
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formspree.io/f/xvgzlowq', { 
         method: 'POST',
-        body: web3FormData
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New Inquiry from ${formData.name}`,
+          to: 'vsrx74@gmail.com'
+        })
       });
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+      if (response.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', website: '', pricingModel: 'DESIGN RETAINER', message: '' });
       } else {
-        console.error('Web3Forms error:', data);
         setStatus('error');
       }
     } catch (error) {
@@ -109,8 +104,6 @@ export default function ContactSection() {
             className="bg-[#111111] rounded-[1.5rem] md:rounded-[2.5rem] p-6 md:p-12 text-white border border-white/5 shadow-2xl"
           >
             <form onSubmit={handleSubmit} className="space-y-5 md:space-y-8">
-              <input type="hidden" name="access_key" value="57bc1e28-4188-4430-a62b-b58f5caac4cd" />
-              
               <div className="grid grid-cols-1 gap-5 md:gap-8">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-400">Your name <span className="text-[#ff4d4d]">*</span></label>

@@ -64,7 +64,7 @@ const Column = ({
               key={id} 
               data-img-id={id}
               onPointerDown={(e) => onPressItem(e, src, id)}
-              className={`w-full aspect-square rounded-xl overflow-hidden shadow-md border border-gray-100 flex-shrink-0 bg-gray-50 cursor-grab active:cursor-grabbing transition-opacity duration-300 ${
+              className={`w-full aspect-square rounded-xl overflow-hidden shadow-md border border-gray-100 flex-shrink-0 bg-gray-50 cursor-pointer hover:scale-[1.015] active:scale-95 transition-all duration-300 ${
                 isThisHeld ? 'opacity-0' : 'opacity-100'
               }`}
               style={{ touchAction: 'none' }}
@@ -109,7 +109,6 @@ export default function PortfolioGrid() {
   heldImageRef.current = heldImage;
 
   const isHeldRef = useRef(false);
-  const currentYRef = useRef(0);
   const holdTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Initialize stagger positions
@@ -155,27 +154,8 @@ export default function PortfolioGrid() {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  const handleDrag = (deltaY: number) => {
-    columns.forEach(({ ref, reverse }) => {
-      const el = ref.current;
-      if (!el) return;
-
-      const direction = reverse ? -1 : 1;
-      // Multiplier governs scroll sensitivity of dragging relative to pixel movement
-      el.scrollTop += deltaY * direction * 0.45;
-
-      const half = el.scrollHeight / 2;
-      if (el.scrollTop >= half) {
-        el.scrollTop -= half;
-      } else if (el.scrollTop <= 0) {
-        el.scrollTop += half;
-      }
-    });
-  };
-
   const handleImagePress = (e: React.PointerEvent, src: string, id: string) => {
     e.preventDefault();
-    currentYRef.current = e.clientY;
 
     const currentTarget = e.currentTarget as HTMLElement;
     const rect = currentTarget.getBoundingClientRect();
@@ -213,7 +193,7 @@ export default function PortfolioGrid() {
     if (!currentHeld) return;
 
     if (!currentHeld.isPopped) {
-      // Released before 1-second timeout, just cancel the popup
+      // Released before 1-second timeout, just cancel the popup and resume scroll
       setHeldImage(null);
       return;
     }
@@ -231,27 +211,18 @@ export default function PortfolioGrid() {
     });
   };
 
-  // Drag and Release listener inside useEffect for window context responsiveness
+  // Only listen to Up and Cancel to release the held/paused state
   useEffect(() => {
     if (!heldImage || heldImage.isClosing) return;
-
-    const handlePointerMove = (e: PointerEvent) => {
-      const clientY = e.clientY;
-      const deltaY = clientY - currentYRef.current;
-      currentYRef.current = clientY;
-      handleDrag(deltaY);
-    };
 
     const handlePointerUp = () => {
       handleRelease();
     };
 
-    window.addEventListener('pointermove', handlePointerMove);
     window.addEventListener('pointerup', handlePointerUp);
     window.addEventListener('pointercancel', handlePointerUp);
 
     return () => {
-      window.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('pointerup', handlePointerUp);
       window.removeEventListener('pointercancel', handlePointerUp);
     };
