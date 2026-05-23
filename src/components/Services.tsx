@@ -28,8 +28,8 @@ const services = [
   },
   {
     title: 'Print & Promotional Design',
-    subtitle: 'High-quality flyers, brochures and more.',
-    image: 'https://images2.imgbox.com/bf/77/1ZyNGzBr_o.png',
+    subtitle: 'Magazine, Book Cover & Layout Design',
+    image: 'https://images2.imgbox.com/6e/a1/Q96BBHDB_o.png',
   },
   {
     title: 'Web Design',

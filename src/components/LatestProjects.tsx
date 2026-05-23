@@ -36,7 +36,7 @@ const projects = [
 
 export default function LatestProjects() {
   return (
-    <section className="pt-0 md:pt-4 pb-12 md:pb-20 bg-white overflow-hidden">
+    <section className="pt-0 md:pt-4 pb-16 md:pb-28 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
         
         {/* Header row */}
