@@ -230,7 +230,7 @@ export default function PortfolioGrid() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-neutral-500"></span>
             </span>
             <span className="text-xs md:text-[13px] font-medium text-neutral-500 tracking-wide leading-none">
-              double click to see an image
+              double click and hold to see an image
             </span>
           </div>
         </div>

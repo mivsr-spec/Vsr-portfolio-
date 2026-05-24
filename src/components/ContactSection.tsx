@@ -8,6 +8,7 @@ export default function ContactSection() {
     email: '',
     website: '',
     pricingModel: 'DESIGN RETAINER',
+    budget: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -38,7 +39,7 @@ export default function ContactSection() {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', website: '', pricingModel: 'DESIGN RETAINER', message: '' });
+        setFormData({ name: '', email: '', website: '', pricingModel: 'DESIGN RETAINER', budget: '', message: '' });
       } else {
         setStatus('error');
       }
@@ -134,6 +135,17 @@ export default function ContactSection() {
                     className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl md:rounded-[1rem] p-4 md:p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600 text-sm md:text-base"
                     value={formData.website}
                     onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-gray-400">Project budget</label>
+                  <input
+                    type="text"
+                    placeholder="Your Project Budget"
+                    className="w-full bg-[#1a1a1a] border border-white/5 rounded-xl md:rounded-[1rem] p-4 md:p-5 focus:ring-1 focus:ring-white/20 transition-all outline-none text-white placeholder:text-gray-600 text-sm md:text-base"
+                    value={formData.budget}
+                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                   />
                 </div>
  
