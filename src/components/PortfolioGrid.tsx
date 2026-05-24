@@ -52,7 +52,7 @@ const Column = ({
     <div 
       ref={columnRef}
       className="relative h-[280px] sm:h-[450px] md:h-[600px] overflow-hidden flex flex-col gap-2 md:gap-4 select-none pointer-events-auto"
-      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      style={{ touchAction: 'manipulation', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
     >
       <div className="flex flex-col gap-2 md:gap-4">
         {items.map(({ src, id }) => {
@@ -65,12 +65,12 @@ const Column = ({
               className={`w-full aspect-square rounded-xl overflow-hidden shadow-md border border-gray-100 flex-shrink-0 bg-gray-50 cursor-pointer hover:scale-[1.01] transition-all duration-300 ${
                 isThisExpanded ? 'opacity-0' : 'opacity-100'
               }`}
-              style={{ touchAction: 'none' }}
+              style={{ touchAction: 'manipulation' }}
             >
               <img 
                 src={src} 
                 alt="Featured work" 
-                className="w-full h-full object-cover select-none pointer-events-none" 
+                className="w-full h-full object-cover select-none" 
                 referrerPolicy="no-referrer"
                 draggable="false"
               />
@@ -150,7 +150,6 @@ export default function PortfolioGrid() {
   }, []);
 
   const handleImageDoubleClick = (e: React.PointerEvent<HTMLDivElement>, src: string, id: string) => {
-    e.preventDefault();
     const now = Date.now();
     const lastTap = lastTapRef.current[id] || 0;
 
